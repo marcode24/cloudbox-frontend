@@ -11,7 +11,7 @@
   left: 1rem;
 }
 
-.login-image {
+.register-image {
   width: 100%;
   height: 100%;
   max-width: 80rem;
@@ -20,26 +20,6 @@
   background-position: center;
 }
 
-
-.options {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-
-  & a {
-    @include fs-6;
-    @include fw-500;
-    color: var(--fc-purple);
-    text-decoration: none;
-
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-}
 
 .btn {
   width: 100%;

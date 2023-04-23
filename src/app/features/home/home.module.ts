@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { DropdownsModule } from '@shared/dropdowns/dropdowns.module';
+
 import { HomeComponent } from './home.component';
 
 @NgModule({
@@ -8,7 +10,8 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DropdownsModule
   ]
 })
 export class HomeModule { }

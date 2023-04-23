@@ -1,1 +1,30 @@
-<p>home works!</p>
+<div class="fluid-container">
+  <div class="files">
+    <section class="group">
+      <span class="title">Folders</span>
+      <div class="items">
+        <div *ngFor="let a of ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']; let i = index" class="item">
+          <div class="icon">
+            <i class="bx bx-folder"></i>
+          </div>
+          <span class="name">Folder {{ i + 1 }} name for </span>
+          <app-dots-dropdown></app-dots-dropdown>
+        </div>
+      </div>
+    </section>
+    <section class="group">
+      <span class="title">Files</span>
+      <div class="items">
+        <div *ngFor="let a of ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']; let i = index" class="item">
+          <div class="icon">
+            <i class="bx bx-file"></i>
+          </div>
+          <span class="name">File {{ i + 31 }}.jpg </span>
+          <button class="options">
+            <i class="bx bx-dots-vertical-rounded"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+@import 'elements/_buttons.scss';
+
+header {
+  position: fixed;
+  margin-left: 250px;
+  height: 75px;
+  padding: 1rem 0.8rem;
+  width: -webkit-fill-available;
+  background: var(--bg);
+  border-bottom: 2px solid #e0e0e0;
+  z-index: 100;
+
+  & .options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & .search {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+
+  & input.icon {
+    background: var(--bg-sidebar);
+    border: var(--border-input);
+    border-radius: 1rem;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 10px 10px 50px;
+    color: var(--font-color-primary);
+    font-size: 16px;
+    transition: 0.2s;
+    box-shadow: var(--box-shadow);
+
+    & ~ i {
+      top: 15px;
+      left: 20px;
+      position: absolute;
+      color: #71767b;
+      transition: 0.2s;
+    }
+
+    &:focus ~ i {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.btn {
+  &.filter {
+    & i {
+      @include fs-4;
+    }
+  }
+}
+
+
+.user {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

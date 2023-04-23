@@ -89,6 +89,11 @@
                 "position": "before"
               },
               {
+                "pattern": "@shared/**",
+                "group": "builtin",
+                "position": "before"
+              },
+              {
                 "pattern": "@services/**",
                 "group": "builtin",
                 "position": "before"
