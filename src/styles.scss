@@ -1,5 +1,6 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
+@import 'settings/_media.scss';
 @import 'elements/_buttons.scss';
 
 * {
@@ -75,6 +76,21 @@ body {
     padding: 1rem 1.8rem;
     max-width: 1400px;
     margin: 0 auto;
+
+    @include width-medium {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @include width-small {
+      padding: 1rem 0.8rem;
+    }
+
+    & .logo-content {
+      @include width-medium {
+        display: none;
+      }
+    }
   }
 
   & section {
@@ -169,12 +185,20 @@ form {
   }
 }
 
-
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   flex: 1;
+
+  @include width-medium {
+    flex: none;
+    width: 80%;
+  }
+
+  @include width-small {
+    width: 100%;
+  }
 }
 
 .main {
