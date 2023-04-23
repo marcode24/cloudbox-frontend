@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="auth-wrapper">
+  <div class="container">
+    <section class="logo-content">
+      <div class="logo">
+        <img src="" alt="logo_image">
+      </div>
+      <img src="assets/images/login.svg" alt="media" class="login-image">
+    </section>
+    <section class="form-group">
+      <div class="main">
+        <span class="title">Iniciar sesión</span>
+        <span class="sign-up">¿No tienes una cuenta?
+          <a routerLink="/register">Regístrate</a>
+        </span>
+      </div>
+      <form>
+        <div class="input-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" placeholder="Correo electrónico">
+        </div>
+        <div class="input-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Contraseña">
+        </div>
+        <div class="options">
+          <div class="input-group row">
+            <input type="checkbox" id="remember">
+            <label for="remember">Recordar</label>
+          </div>
+          <a routerLink="/forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="input-container">
+          <button class="btn btn-primary">Iniciar sesión</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

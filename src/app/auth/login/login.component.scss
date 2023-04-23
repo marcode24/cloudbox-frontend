@@ -1,0 +1,83 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.logo-content {
+  flex: 2;
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  max-width: 80rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+
+  & .title {
+    @include fs-1;
+    @include fw-600;
+    color: var(--fc-purple);
+  }
+
+  & .sign-up {
+    @include fs-5;
+    @include fw-400;
+    color: var(--fc-secondary);
+
+    & a {
+      color: var(--fc-purple);
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  & a {
+    @include fs-6;
+    @include fw-500;
+    color: var(--fc-purple);
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.btn {
+  width: 100%;
+  border-radius: 0.5rem;
+}
