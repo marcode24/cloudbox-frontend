@@ -130,3 +130,41 @@ form {
     }
   }
 }
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+
+  & .title {
+    @include fs-1;
+    @include fw-600;
+    color: var(--fc-purple);
+  }
+
+  & .sign-up {
+    @include fs-5;
+    @include fw-400;
+    color: var(--fc-secondary);
+
+    & a {
+      color: var(--fc-purple);
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
