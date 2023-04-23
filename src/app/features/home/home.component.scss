@@ -32,6 +32,7 @@
         border-radius: 1rem;
         background: var(--bg-2);
         box-shadow: var(--box-shadow);
+        position: relative;
 
         & .name {
           @include fs-6;
@@ -46,24 +47,6 @@
         & .icon {
           @include fs-4;
           color: var(--fc-primary);
-        }
-
-        & .options {
-          @include fs-4;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: none;
-          border-radius: 50%;
-          height: 28px;
-          width: 28px;
-          background: transparent;
-          transition: 0.4s ease;
-          cursor: pointer;
-
-          &:hover {
-            background: var(--bg-hover-2);
-          }
         }
       }
     }

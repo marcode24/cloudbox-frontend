@@ -8,6 +8,7 @@ header {
   width: -webkit-fill-available;
   background: var(--bg);
   border-bottom: 2px solid #e0e0e0;
+  z-index: 100;
 
   & .options {
     display: flex;
