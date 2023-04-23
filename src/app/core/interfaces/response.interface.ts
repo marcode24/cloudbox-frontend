@@ -5,7 +5,7 @@ export interface IUserCreated {
   ok: boolean;
   user: User;
   token: string;
-  root: Folder;
+  root?: Folder;
   status?: number;
   msg?: string;
 }

@@ -6,7 +6,7 @@ import { environment } from 'environments/environment';
 import { Observable, map } from 'rxjs';
 
 import { IUserCreated } from '@interfaces/response.interface';
-import { ICreateAccount } from '@interfaces/user.interface';
+import { ICreateAccount, ILogin } from '@interfaces/user.interface';
 
 const base_url = environment.base_url;
 
@@ -22,6 +22,11 @@ export class AuthService {
 
   createAccount(data: ICreateAccount): Observable<IUserCreated> {
     const url = `${base_url}/user`;
+    return this.http.post<IUserCreated>(url, data);
+  }
+
+  login(data: ILogin): Observable<IUserCreated> {
+    const url = `${base_url}/auth/login`;
     return this.http.post<IUserCreated>(url, data);
   }
 }
