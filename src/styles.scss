@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'elements/_buttons.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Arial, Helvetica, sans-serif; // add poppins url from google fonts
+  scroll-behavior: smooth;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+:root {
+  --bg: #{$white};
+  --bg-2: #{$white-grey};
+  --bg-hover-1: #{$purple};
+  --bg-hover-2: #{$white-grey-hover};
+  --bg-sidebar: #{$purple-light};
+  --fc-primary: #{$black};
+  --fc-white: #{$white-grey};
+  --border-input: none;
+  // --border-input: 1px solid #333639;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fc-primary);
+}
+
+.wrapper {
+
+  & .container {
+    min-height: 100vh;
+    margin-left: 250px;
+    width: auto;
+  }
+}
+
+
+.btn {
+  @include btn;
+
+  &.btn-primary {
+    @include btn-primary;
+  }
+}
+
+.fluid-container {
+  padding: 1rem 0.8rem;
+}

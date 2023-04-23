@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+@mixin fs-1 {
+  font-size: 28px;
+}
+
+@mixin fs-2 {
+  font-size: 24px;
+}
+
+@mixin fs-3 {
+  font-size: 20px;
+}
+
+@mixin fs-4 {
+  font-size: 18px;
+}
+
+@mixin fs-5 {
+  font-size: 16px;
+}
+
+@mixin fs-6 {
+  font-size: 14px;
+}
+
+@mixin fw-700 {
+  font-weight: 700;
+}
+
+@mixin fw-600 {
+  font-weight: 700;
+}
+
+@mixin fw-500 {
+  font-weight: 500;
+}
+
+@mixin fw-400 {
+  font-weight: 400;
+}
+
+@mixin fw-300 {
+  font-weight: 300;
+}
