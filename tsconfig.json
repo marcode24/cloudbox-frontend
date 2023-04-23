@@ -22,6 +22,7 @@
       "es2020",
       "dom"
     ],
+    "strictPropertyInitialization": false,
     "paths": {
       "@components/*": [ "app/core/components/*" ],
       "@interfaces/*": [ "app/core/interfaces/*" ],
@@ -31,6 +32,7 @@
       "@interceptors/*": [ "app/core/interceptors/*" ],
       "@guards/*": [ "app/core/guards/*" ],
       "@constants/*": [ "app/core/constants/*" ],
+      "@shared/*": [ "app/shared/*" ],
     }
   },
   "angularCompilerOptions": {
