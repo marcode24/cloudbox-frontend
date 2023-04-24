@@ -1,3 +1,4 @@
+import { HttpClientModule,  } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,7 @@ import { FeaturesModule } from './features/features.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FeaturesModule,
     AuthModule

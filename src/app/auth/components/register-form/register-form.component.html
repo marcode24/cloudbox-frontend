@@ -1,0 +1,66 @@
+<form [formGroup]="registerForm" (submit)="onSubmit()">
+  <div class="input-group">
+    <label for="name">Nombre<span>*</span></label>
+    <input formControlName="name" type="text" id="name" placeholder="Nombre">
+    <ng-container *ngIf="validateForm('name')">
+      <span *ngIf="validateField('name', 'required')" class="text-danger">Este campo es requerido</span>
+      <span *ngIf="validateField('name', 'pattern')" class="text-danger">ingrese un nombre
+        correcto</span>
+    </ng-container>
+  </div>
+  <div class="input-group">
+    <label for="surname">Apellido<span>*</span></label>
+    <input formControlName="surname" type="text" id="surname" placeholder="Apellido">
+    <ng-container *ngIf="validateForm('surname')">
+      <span *ngIf="validateField('surname', 'required')" class="text-danger">Este campo es
+        requerido</span>
+      <span *ngIf="validateField('surname', 'pattern')" class="text-danger">ingrese un apellido
+        correcto</span>
+    </ng-container>
+  </div>
+  <div class="input-group">
+    <label for="email">Correo electrónico<span>*</span></label>
+    <input formControlName="email" type="email" id="email" placeholder="Correo electrónico">
+    <ng-container *ngIf="validateForm('email')">
+      <span *ngIf="validateField('email', 'required')" class="text-danger">Este campo es requerido</span>
+      <span *ngIf="validateField('email', 'pattern')" class="text-danger">ingrese un correo
+        electrónico correcto</span>
+    </ng-container>
+  </div>
+  <div class="input-group">
+    <label for="password">Contraseña<span>*</span></label>
+    <div class="input-icon">
+      <input formControlName="password" type="password" id="password" placeholder="Contraseña">
+      <i class="bx bx-hide" id="password-icon" (click)="showPassword('password')"></i>
+    </div>
+    <ng-container *ngIf="validateForm('password')">
+      <span *ngIf="validateField('password', 'required')" class="text-danger">Este campo es
+        requerido</span>
+      <span *ngIf="validateField('password', 'pattern')" class="text-danger">
+        La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un
+        caracter especial
+      </span>
+    </ng-container>
+  </div>
+  <div class="input-group">
+    <label for="confirm-password">Confirmar contraseña<span>*</span></label>
+    <div class="input-icon">
+      <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirmar contraseña">
+      <i class="bx bx-hide" id="confirm-password-icon" (click)="showPassword('confirm-password')"></i>
+    </div>
+    <ng-container *ngIf="validateForm('confirmPassword')">
+      <span *ngIf="validateField('confirmPassword', 'required')" class="text-danger">Este campo es
+        requerido</span>
+      <span *ngIf="validateField('confirmPassword', 'matching')" class="text-danger">Las contraseñas
+        no coinciden</span>
+    </ng-container>
+  </div>
+  <div class="input-container">
+    <button class="btn btn-primary" [disabled]="registerForm.invalid" type="submit">Regístrarme</button>
+  </div>
+  <ng-container *ngIf="showErrors && errors.length > 0">
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </ng-container>
+</form>

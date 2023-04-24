@@ -33,21 +33,6 @@
         background: var(--bg-2);
         box-shadow: var(--box-shadow);
         position: relative;
-
-        & .name {
-          @include fs-6;
-          @include fw-400;
-          color: var(--fc-primary);
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-          flex: 1;
-        }
-
-        & .icon {
-          @include fs-4;
-          color: var(--fc-primary);
-        }
       }
     }
   }

@@ -1,0 +1,58 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.btn-select.open ~ .list-items {
+  display: block;
+}
+
+.list-items {
+  position: absolute;
+  margin-top: 5px;
+  border-radius: 8px;
+  min-width: 15rem;
+  background-color: #fff; /* change to vars */
+  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+  z-index: 10;
+  transition: 0.3s ease;
+  display: none;
+
+  .item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 0 1rem;
+    gap: 1.2rem;
+
+    &:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    &:hover {
+      background-color: #e7edfe; /* change to vars */
+    }
+
+    & .title {
+      @include fs-5;
+      @include fw-400;
+      color: var(--fc-primary);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    & i {
+      @include fs-4;
+      @include fw-600;
+      color: var(--fc-primary);
+    }
+  }
+}
+

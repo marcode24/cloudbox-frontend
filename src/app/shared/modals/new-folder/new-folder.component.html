@@ -1,0 +1,16 @@
+<div class="modal dialog" #modalFolder>
+  <div class="modal-content">
+    <div class="header">
+      <span class="title">Carpeta nueva</span>
+      <div class="i-wrapper">
+        <i class="bx bx-x" (click)="closeModal()"></i>
+      </div>
+    </div>
+    <div class="body">
+      <input type="text" placeholder="Nombre de la carpeta" [(ngModel)]="folderName" (keyup.enter)="createFolder()">
+      <div class="actions">
+        <button class="btn btn-primary" [disabled]="!validateFolderName()" (click)="createFolder()">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>

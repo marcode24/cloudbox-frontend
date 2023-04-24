@@ -24,6 +24,10 @@
   font-size: 14px;
 }
 
+@mixin fs-7 {
+  font-size: 12px;
+}
+
 @mixin fw-700 {
   font-weight: 700;
 }

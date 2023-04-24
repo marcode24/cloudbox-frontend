@@ -1,0 +1,25 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.btn {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.input-container {
+  margin-top: 1rem;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    @include fs-6;
+    @include fw-500;
+    color: var(--fc-purple);
+    margin-bottom: 0.5rem;
+  }
+}
