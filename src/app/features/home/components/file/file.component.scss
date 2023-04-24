@@ -1,0 +1,21 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.name {
+  @include fs-5;
+  @include fw-400;
+  color: var(--fc-primary);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.icon {
+  @include fs-4;
+  color: var(--fc-primary);
+
+  & i {
+    @include fw-600;
+  }
+}

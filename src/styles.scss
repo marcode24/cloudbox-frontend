@@ -21,7 +21,8 @@
   --bg-hover-1: #{$purple};
   --bg-hover-2: #{$white-grey-hover};
   --bg-sidebar: #{$purple-light};
-  --fc-primary: #{$black};
+  --fc-primary: #{$dark};
+  --fc-secondary: #{$dark-grey};
   --fc-white: #{$white-grey};
   --fc-purple: #{$purple};
   --border-input: none;
@@ -31,6 +32,12 @@
 body {
   background: var(--bg);
   color: var(--fc-primary);
+}
+
+body.modal-open {
+  height: 100vh;
+  overflow: hidden;
+  padding-right: 15px;
 }
 
 .wrapper {
@@ -58,6 +65,9 @@ body {
 
 .fluid-container {
   padding: 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 
@@ -171,53 +181,6 @@ form {
       }
     }
 
-    & input {
-      @include fs-6;
-      @include fw-500;
-      padding: 0.5rem 1rem;
-      border: var(--border-input);
-      border-radius: 0.5rem;
-      background: var(--bg-2);
-      color: var(--fc-primary);
-      transition: all 0.3s ease-in-out;
-
-      &:focus {
-        border: var(--border-input);
-        background: var(--bg-2);
-        color: var(--fc-primary);
-      }
-
-      &[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-        margin: 0;
-        font: inherit;
-        color: currentColor;
-        width: 0.8rem;
-        height: 1.8rem;
-        border-radius: 0.5rem;
-        transform: translateY(-0.075em);
-        display: grid;
-        place-content: center;
-        color: var(--fc-purple);
-      }
-
-      &[type="checkbox"]::before {
-        content: "";
-        width: 0.65em;
-        height: 0.65em;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-        transform: scale(0);
-        transform-origin: bottom left;
-        transition: 120ms transform ease-in-out;
-        background-color: currentColor;
-      }
-
-      &[type="checkbox"]:checked::before {
-        transform: scale(1);
-      }
-    }
-
     & i {
       position: absolute;
       top: 50%;
@@ -226,6 +189,54 @@ form {
       color: var(--fc-purple);
       cursor: pointer;
     }
+  }
+}
+
+input {
+  @include fs-6;
+  @include fw-500;
+  padding: 0.5rem 1rem;
+  border: var(--border-input);
+  border-radius: 0.5rem;
+  background: var(--bg-2);
+  color: var(--fc-primary);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+
+  &:focus {
+    border: var(--border-input);
+    background: var(--bg-2);
+    color: var(--fc-primary);
+  }
+
+  &[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 0.8rem;
+    height: 1.8rem;
+    border-radius: 0.5rem;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    color: var(--fc-purple);
+  }
+
+  &[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    background-color: currentColor;
+  }
+
+  &[type="checkbox"]:checked::before {
+    transform: scale(1);
   }
 }
 
@@ -272,5 +283,75 @@ form {
         text-decoration: underline;
       }
     }
+  }
+}
+
+
+.modal {
+  z-index: 200;
+  background-color: rgba(71, 80, 87, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &.modal-open {
+    display: flex;
+    opacity: 1;
+    position: fixed;
+  }
+}
+
+.modal-content {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  max-width: 30rem;
+  background-color: var(--bg);
+  padding: 1rem;
+  gap: 1.2rem;
+
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .title {
+      @include fs-2;
+      @include fw-600;
+      color: var(--fc-primary);
+    }
+
+    & .i-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fc-purple);
+      transition: 0.5s;
+      border-radius: 50%;
+
+      &:hover {
+        background: var(--bg-sidebar);
+        cursor: pointer;
+      }
+
+      & i {
+        font-size: 28px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    border-radius: 0;
+    min-width: 100vw;
+    min-height: 100vh;
   }
 }

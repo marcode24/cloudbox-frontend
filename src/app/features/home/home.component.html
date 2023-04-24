@@ -1,30 +1,23 @@
 <div class="fluid-container">
+  <app-actions [folder]="root"></app-actions>
   <div class="files">
     <section class="group">
       <span class="title">Folders</span>
       <div class="items">
-        <div *ngFor="let a of ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']; let i = index" class="item">
-          <div class="icon">
-            <i class="bx bx-folder"></i>
-          </div>
-          <span class="name">Folder {{ i + 1 }} name for </span>
-          <app-dots-dropdown></app-dots-dropdown>
-        </div>
+        <app-folder *ngFor="let folder of root.folders" class="item"
+          [folder]="folder"
+        ></app-folder>
       </div>
     </section>
     <section class="group">
       <span class="title">Files</span>
       <div class="items">
-        <div *ngFor="let a of ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']; let i = index" class="item">
-          <div class="icon">
-            <i class="bx bx-file"></i>
-          </div>
-          <span class="name">File {{ i + 31 }}.jpg </span>
-          <button class="options">
-            <i class="bx bx-dots-vertical-rounded"></i>
-          </button>
-        </div>
+        <app-file *ngFor="let file of root.files" class="item"
+          [file]="file"
+        ></app-file>
       </div>
     </section>
   </div>
 </div>
+
+<app-new-folder></app-new-folder>

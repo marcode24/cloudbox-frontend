@@ -5,6 +5,7 @@ import { environment } from 'environments/environment';
 
 import { Observable, catchError, map, of } from 'rxjs';
 
+import { Folder } from '@models/folder.model';
 import { User } from '@models/user.model';
 
 import { IUserCreated } from '@interfaces/response.interface';
@@ -53,6 +54,7 @@ export class AuthService {
     return this.http.get<IUserCreated>(url, this.headers)
       .pipe(map((resp) => {
         this.userActive = resp.user;
+        this.userActive.rootFolder = resp.root as Folder;
         Storage.removeLocalStorage('token');
         Storage.savelocalStorage('token', resp.token);
         return true;

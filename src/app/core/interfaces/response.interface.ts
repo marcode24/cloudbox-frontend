@@ -9,3 +9,9 @@ export interface IUserCreated {
   status?: number;
   msg?: string;
 }
+
+export interface IFolderCreated {
+  ok: boolean;
+  folder: Folder;
+  msg: string;
+}
