@@ -1,0 +1,46 @@
+<div class="modal dialog" #modalFiles>
+  <div class="modal-content">
+    <div class="header">
+      <span class="title">Cargar archivos</span>
+      <div class="i-wrapper">
+        <i class="bx bx-x" (click)="closeModal()"></i>
+      </div>
+    </div>
+    <div class="body">
+      <form>
+        <div class="form-group" *ngIf="!files.length">
+          <label for="file">Selecciona los archivos</label>
+          <input type="file" id="file" name="file" multiple (change)="onFileChange($event)">
+        </div>
+        <div class="scroll-preview" *ngIf="files && files.length > 0">
+          <div class="files-preview">
+            <div class="file" *ngFor="let file of files; let i = index">
+              <div class="file-info">
+                <div class="file-icon">
+                  <i class="bx bx-file"></i>
+                </div>
+                <span class="file-name">{{ file.name }}</span>
+                <span class="file-size">{{ file.size }}</span>
+              </div>
+              <div class="file-actions">
+                <i class="bx bx-x" (click)="removeFile(i)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="warning">
+          Peso máximo por archivo: 2MB
+        </span>
+        <div class="actions">
+          <button class="btn btn-primary" *ngIf="files && files.length > 0" type="file" (click)="selectFiles()">
+            Subir más archivos
+          </button>
+          <button class="btn btn-primary" [disabled]="!validateFiles() || uploading" (click)="uploadFiles()">
+            {{ uploading ? 'Guardando' : 'Guardar' }}
+            <i *ngIf="uploading" class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

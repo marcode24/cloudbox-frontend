@@ -1,0 +1,105 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.modal-content {
+  min-width: 600px;
+}
+
+.form-group {
+  gap: 1rem;
+}
+
+.scroll-preview {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--bg-hover-1);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bg-hover-2);
+  }
+}
+
+.files-preview {
+
+  & .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: 0.4s ease;
+    gap: 1rem;
+    cursor: default;
+
+    &:hover {
+      background-color: var(--bg-2);
+    }
+
+    & .file-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+
+      & .file-icon {
+        font-size: 1.5rem;
+        color: var(--fc-purple);
+      }
+
+      & .file-name {
+        @include fs-6;
+        @include fw-500;
+        color: var(--fc-primary);
+        flex: 6;
+      }
+
+      & .file-size {
+        @include fs-6;
+        flex: 1;
+        color: var(--fc-secondary);
+      }
+    }
+
+    & .file-actions {
+      @include fs-2;
+      color: var(--fc-purple);
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.4s ease;
+
+      &:hover {
+        background-color: var(--bg-hover-2);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.warning {
+  @include fs-6;
+  @include fw-500;
+  color: var(--fc-purple);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}

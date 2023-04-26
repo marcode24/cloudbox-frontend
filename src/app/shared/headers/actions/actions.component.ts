@@ -28,4 +28,9 @@ export class ActionsComponent {
     this.closeDrop(element);
     this.modalService.openNewFolder(this.folder._id as string);
   }
+
+  openNewFileModal(element: HTMLButtonElement): void {
+    this.closeDrop(element);
+    this.modalService.openNewFile(this.folder._id as string);
+  }
 }

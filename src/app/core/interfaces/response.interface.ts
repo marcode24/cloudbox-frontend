@@ -1,3 +1,4 @@
+import { File } from "@models/file.model";
 import { Folder } from "@models/folder.model";
 import { User } from "@models/user.model";
 
@@ -19,4 +20,10 @@ export interface IFolderCreated {
 export interface IFolderResponse {
   ok: boolean,
   folder: Folder,
+}
+
+export interface IFileResponse {
+  ok: boolean,
+  msg: string,
+  files: File[]
 }
