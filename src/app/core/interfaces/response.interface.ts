@@ -15,3 +15,8 @@ export interface IFolderCreated {
   folder: Folder;
   msg: string;
 }
+
+export interface IFolderResponse {
+  ok: boolean,
+  folder: Folder,
+}

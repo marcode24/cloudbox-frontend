@@ -377,3 +377,17 @@ input {
     max-width: 20rem;
   }
 }
+
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+
+  & .title {
+    @include fs-4;
+    font-weight: 600;
+    color: var(--fc-primary);
+  }
+}

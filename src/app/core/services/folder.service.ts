@@ -2,9 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 
+import { Observable, map } from 'rxjs';
+
 import { Folder } from '@models/folder.model';
 
-import { IFolderCreated } from '@interfaces/response.interface';
+import { IFolderCreated, IFolderResponse } from '@interfaces/response.interface';
 
 import Storage from '@utils/storage.util';
 
@@ -35,5 +37,10 @@ export class FolderService {
         this.folderCreated.emit(folder);
       }
     });
+  }
+
+  getFolder(folderID: string): Observable<Folder> {
+    const url = `${base_url}/folder/${folderID}`;
+    return this.http.get<IFolderResponse>(url, this.headers).pipe(map(resp => resp.folder));
   }
 }
