@@ -1,59 +1,52 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
 
-.items {
+.item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  height: 3.2rem;
+  padding: 0 0.5rem;
+  gap: 1rem;
+  border-radius: 1rem;
+  transition: 0.3s ease;
+  cursor: pointer;
 
-  & .item {
+  &:hover {
+    background: var(--bg-hover-2);
+  }
+
+  & .icon {
+    @include fs-2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    height: 3.2rem;
-    padding: 0 0.5rem;
-    gap: 1rem;
-    border-radius: 1rem;
-    transition: 0.3s ease;
-    cursor: pointer;
+    justify-content: center;
+  }
 
-    &:hover {
-      background: var(--bg-hover-2);
-    }
+  & .name, & .type, & .size {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-    & .icon {
-      @include fs-3;
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%;
-      background: var(--bg-2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  & .name {
+    @include fs-5;
+    @include fw-400;
+    flex: 2;
+    color: var(--fc-primary);
+  }
 
-    & .name, & .type, & .size {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  & .type, & .size {
+    @include fs-6;
+    flex: 1;
+    color: var(--fc-secondary);
+  }
 
-    & .name {
-      @include fs-5;
-      @include fw-400;
-      flex: 2;
-      color: var(--fc-primary);
-    }
-
-    & .type, & .size {
-      @include fs-6;
-      flex: 1;
-      color: var(--fc-secondary);
-      text-align: center;
-    }
-
-    & .actions {
-      flex: 1;
-      text-align: center;
-    }
+  & .actions {
+    flex: 1;
+    text-align: center;
   }
 }

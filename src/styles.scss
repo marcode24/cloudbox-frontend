@@ -406,4 +406,8 @@ input {
   &.bxs-file {
     color: $blue;
   }
+
+  &.bxs-folder, &.bx-folder {
+    color: $orange;
+  }
 }

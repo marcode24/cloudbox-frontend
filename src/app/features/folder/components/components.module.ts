@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { PipesModule } from '@pipes/pipes.module';
+
 import { TableFilesComponent } from './table-files/table-files.component';
 
 @NgModule({
@@ -8,7 +10,8 @@ import { TableFilesComponent } from './table-files/table-files.component';
     TableFilesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PipesModule
   ],
   exports: [
     TableFilesComponent,

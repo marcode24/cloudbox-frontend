@@ -12,10 +12,6 @@
 }
 
 .icon {
-  @include fs-4;
+  @include fs-2;
   color: var(--fc-primary);
-
-  & i {
-    @include fw-600;
-  }
 }

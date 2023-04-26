@@ -12,6 +12,7 @@ export const ICONS = {
   jpg: 'bxs-file-jpg',
   jpeg: 'bxs-file-image',
   pdf: 'bxs-file-pdf',
+  docx: 'bxs-file',
 } as const;
 
 export const ALLOWED_FILE_EXTENSIONS = [

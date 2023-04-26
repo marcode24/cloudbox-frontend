@@ -11,6 +11,7 @@ export class Folder {
   createdAt: Date;
   updatedAt: Date;
   parent: Folder;
+  type: string;
   folders: Folder[];
   files: File[];
   color: string;

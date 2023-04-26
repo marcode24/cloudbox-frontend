@@ -12,5 +12,6 @@ export class File {
   createdAt: Date;
   updatedAt: Date;
   folder: Folder;
+  type: string;
   _id?: string;
 }
