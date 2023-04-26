@@ -63,12 +63,12 @@
         @include fs-6;
         @include fw-500;
         color: var(--fc-primary);
-        flex: 6;
+        flex: 10;
       }
 
       & .file-size {
         @include fs-6;
-        flex: 1;
+        flex: 2;
         color: var(--fc-secondary);
       }
     }

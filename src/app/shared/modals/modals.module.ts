@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { PipesModule } from '@pipes/pipes.module';
+
 import { NewFolderComponent } from './new-folder/new-folder.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 
@@ -13,6 +15,7 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
   imports: [
     CommonModule,
     FormsModule,
+    PipesModule
   ],
   exports: [
     NewFolderComponent,

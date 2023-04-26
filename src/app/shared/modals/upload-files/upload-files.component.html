@@ -20,7 +20,7 @@
                   <i class="bx bx-file"></i>
                 </div>
                 <span class="file-name">{{ file.name }}</span>
-                <span class="file-size">{{ file.size }}</span>
+                <span class="file-size">{{ file.size | fileSize }}</span>
               </div>
               <div class="file-actions">
                 <i class="bx bx-x" (click)="removeFile(i)"></i>
