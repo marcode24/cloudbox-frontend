@@ -17,7 +17,7 @@
             <div class="file" *ngFor="let file of files; let i = index">
               <div class="file-info">
                 <div class="file-icon">
-                  <i class="bx bx-file"></i>
+                  <i class="bx" [ngClass]="getIcon(file)"></i>
                 </div>
                 <span class="file-name">{{ file.name }}</span>
                 <span class="file-size">{{ file.size | fileSize }}</span>
@@ -28,9 +28,14 @@
             </div>
           </div>
         </div>
-        <span class="warning">
-          Peso máximo por archivo: 2MB
-        </span>
+        <div class="messages">
+          <span class="message">
+            Peso máximo por archivo: 2MB
+          </span>
+          <span class="message">
+            Formatos permitidos: {{ allowedFormats() }}
+          </span>
+        </div>
         <div class="actions">
           <button class="btn btn-primary" *ngIf="files && files.length > 0" type="file" (click)="selectFiles()">
             Subir más archivos

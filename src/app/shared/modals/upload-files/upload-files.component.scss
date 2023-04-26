@@ -55,7 +55,7 @@
       flex: 1;
 
       & .file-icon {
-        font-size: 1.5rem;
+        @include fs-1;
         color: var(--fc-purple);
       }
 
@@ -92,10 +92,16 @@
   }
 }
 
-.warning {
-  @include fs-6;
-  @include fw-500;
-  color: var(--fc-purple);
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & .message {
+    @include fs-6;
+    @include fw-500;
+    color: var(--fc-purple);
+  }
 }
 
 .actions {

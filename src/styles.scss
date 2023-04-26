@@ -391,3 +391,19 @@ input {
     color: var(--fc-primary);
   }
 }
+
+.bx {
+  &.bxs-file-png,
+  &.bxs-file-jpg,
+  &.bxs-file-image {
+    color: $green;
+  }
+
+  &.bxs-file-pdf {
+    color: $red;
+  }
+
+  &.bxs-file {
+    color: $blue;
+  }
+}

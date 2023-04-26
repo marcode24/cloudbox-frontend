@@ -5,7 +5,13 @@ import { Subscription } from 'rxjs';
 import { FileService } from '@services/file.service';
 import { ModalService } from '@services/modal.service';
 
-import { ALLOWED_FILE_TYPES, MAX_FILE_SIZE } from '@constants/file.constant';
+import { getIconFile } from '@utils/icon-file.util';
+
+import {
+  ALLOWED_FILE_EXTENSIONS,
+  ALLOWED_FILE_TYPES,
+  MAX_FILE_SIZE
+} from '@constants/file.constant';
 
 @Component({
   selector: 'app-upload-files',
@@ -65,6 +71,14 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
       return file;
     });
     this.files = [...this.files, ...files];
+  }
+
+  getIcon(file: File): string {
+    return getIconFile(file.type);
+  }
+
+  allowedFormats(): string {
+    return ALLOWED_FILE_EXTENSIONS.map((extension) => `.${extension}`).join(' ');
   }
 
   validateFiles(): boolean {
