@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { FolderService } from '@services/folder.service';
-import { isMongoId } from '@utils/mongo.util';
+import { ActivatedRouteSnapshot, CanActivate, Router, UrlTree } from '@angular/router';
+
 import { Observable, tap } from 'rxjs';
+
+import { FolderService } from '@services/folder.service';
+
+import { isMongoId } from '@utils/mongo.util';
 
 @Injectable({
   providedIn: 'root'
