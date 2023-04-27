@@ -33,7 +33,7 @@ header {
 
   & input.icon {
     background: var(--bg-sidebar);
-    border: var(--border-input);
+    border: 1px solid transparent;
     border-radius: 1rem;
     width: 100%;
     min-width: 0;
@@ -42,6 +42,13 @@ header {
     font-size: 16px;
     transition: 0.2s;
     box-shadow: var(--box-shadow);
+
+    &:focus {
+      border: 1px solid var(--border-input);
+      background: var(--bg-2);
+      color: var(--fc-primary);
+      outline: 0;
+    }
 
     & ~ i {
       top: 15px;

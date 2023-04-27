@@ -17,11 +17,16 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        padding: 1rem;
         border-radius: 1rem;
         background: var(--bg-2);
         box-shadow: var(--box-shadow);
         position: relative;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: var(--bg-hover-3);
+        }
       }
     }
   }

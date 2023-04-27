@@ -5,6 +5,7 @@ import { DropdownsModule } from '@shared/dropdowns/dropdowns.module';
 
 import { FileComponent } from './file/file.component';
 import { FolderComponent } from './folder/folder.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FolderComponent } from './folder/folder.component';
   ],
   imports: [
     CommonModule,
-    DropdownsModule
+    DropdownsModule,
+    RouterModule
   ],
   exports: [
     FileComponent,

@@ -10,9 +10,6 @@
   font-family: Poppins, Arial, Helvetica, sans-serif; // add poppins url from google fonts
   scroll-behavior: smooth;
 
-  &:focus {
-    outline: none;
-  }
 }
 
 :root {
@@ -20,12 +17,13 @@
   --bg-2: #{$white-grey};
   --bg-hover-1: #{$purple};
   --bg-hover-2: #{$white-grey-hover};
+  --bg-hover-3: #{$line-dark};
   --bg-sidebar: #{$purple-light};
   --fc-primary: #{$dark};
   --fc-secondary: #{$dark-grey};
   --fc-white: #{$white-grey};
   --fc-purple: #{$purple};
-  --border-input: none;
+  --border-input: #{$purple};
   // --border-input: 1px solid #333639;
 }
 
@@ -179,6 +177,7 @@ form {
       & input {
         width: 100%;
         padding-right: 2.3rem;
+        border: 1px solid transparent;
       }
     }
 
@@ -197,17 +196,22 @@ input {
   @include fs-6;
   @include fw-500;
   padding: 0.5rem 1rem;
-  border: var(--border-input);
+  border: 1px solid transparent;
   border-radius: 0.5rem;
   background: var(--bg-2);
   color: var(--fc-primary);
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   width: 100%;
 
   &:focus {
-    border: var(--border-input);
+    border: 1px solid var(--border-input);
     background: var(--bg-2);
     color: var(--fc-primary);
+    outline: 0;
   }
 
   &[type="checkbox"] {

@@ -1,6 +1,16 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
 
+.folder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.6rem 0 0.6rem 1rem;
+  gap: 0.8rem;
+  flex: 1;
+  width: 80%;
+}
+
 .name {
   @include fs-5;
   @include fw-400;
@@ -14,4 +24,8 @@
 .icon {
   @include fs-2;
   color: var(--fc-primary);
+}
+
+.actions {
+  margin-right: 1rem;
 }

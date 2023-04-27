@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 
 import { Folder } from '@models/folder.model';
 
@@ -17,6 +17,7 @@ const base_url = environment.base_url;
 })
 export class FolderService {
   folderCreated: EventEmitter<Folder> = new EventEmitter();
+  folderTemp: Folder;
 
   get headers() {
     return {
@@ -39,8 +40,14 @@ export class FolderService {
     });
   }
 
-  getFolder(folderID: string): Observable<Folder> {
+  getFolder(folderID: string): Observable<boolean> {
     const url = `${base_url}/folder/${folderID}`;
-    return this.http.get<IFolderResponse>(url, this.headers).pipe(map(resp => resp.folder));
+    return this.http.get<IFolderResponse>(url, this.headers)
+      .pipe(map(resp => {
+        const { folder } = resp;
+        if(!folder) return false;
+        this.folderTemp = folder;
+        return true;
+    }), catchError(() => of(false)));
   }
 }

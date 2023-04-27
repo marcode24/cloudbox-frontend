@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -9,7 +8,6 @@ import { FolderService } from '@services/folder.service';
 import { File } from '@models/file.model';
 import { Folder } from '@models/folder.model';
 
-import { isMongoId } from '@utils/mongo.util';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.component.html',
@@ -23,8 +21,6 @@ export class FolderComponent implements OnInit, OnDestroy {
   allFiles: (Folder | File)[];
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
     private folderService: FolderService,
     private fileService: FileService,
   ) { }
@@ -44,21 +40,14 @@ export class FolderComponent implements OnInit, OnDestroy {
       this.folder.files.push(...files);
       this.mixFilesAndFolders();
     });
-    this.activatedRoute.params.subscribe(({folderId}) => {
-      if(!isMongoId(folderId)) return this.router.navigate(['/']);
-      this.getFolder(folderId);
-    });
+    this.getFolder();
   }
 
-  getFolder(id: string): void {
+  getFolder(): void {
     this.loading = true;
-    this.folderService.getFolder(id).subscribe({
-      next: (folder) => {
-        this.folder = folder;
-        this.mixFilesAndFolders();
-      },
-      complete: () => this.loading = false
-    });
+    this.folder = this.folderService.folderTemp;
+    this.mixFilesAndFolders();
+    this.loading = false;
   }
 
   private orderFolders(): void {
