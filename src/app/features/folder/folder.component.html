@@ -1,0 +1,20 @@
+<div class="fluid-container" *ngIf="!loading && folder">
+  <app-actions [folder]="folder"></app-actions>
+  <div class="not-items" *ngIf="!allFiles.length">
+    <img src="assets/images/no-files.svg" alt="no-files-image">
+    <span class="description">Agrega tu primer archivo o carpeta</span>
+  </div>
+  <div class="files" *ngIf="allFiles.length">
+    <section class="group">
+      <span class="title">Files</span>
+      <div class="items">
+        <app-table-files *ngFor="let file of allFiles"
+          [file]="file"
+        ></app-table-files>
+      </div>
+    </section>
+  </div>
+</div>
+
+<app-new-folder></app-new-folder>
+<app-upload-files></app-upload-files>

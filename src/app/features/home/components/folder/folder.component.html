@@ -1,5 +1,7 @@
-<div class="icon" [ngStyle]="{'color': (folder.color) ? folder.color : 'var(--fc-secondary)'}">
-  <i class="bx bxs-folder"></i>
+<div class="folder" [routerLink]="['/folder', folder._id]">
+  <div class="icon" [ngStyle]="{'color': (folder.color) ? folder.color : 'var(--fc-secondary)'}">
+    <i class="bx bxs-folder"></i>
+  </div>
+  <span class="name">{{ folder.name }}</span>
 </div>
-<span class="name">{{ folder.name }}</span>
 <app-dots-dropdown class="actions"></app-dots-dropdown>

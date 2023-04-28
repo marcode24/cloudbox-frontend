@@ -8,17 +8,6 @@
   gap: 1rem;
 
   & .group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.8rem;
-
-    & .title {
-      @include fs-4;
-      font-weight: 600;
-      color: var(--fc-primary);
-    }
-
     & .items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -28,11 +17,16 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        padding: 1rem;
         border-radius: 1rem;
         background: var(--bg-2);
         box-shadow: var(--box-shadow);
         position: relative;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: var(--bg-hover-3);
+        }
       }
     }
   }

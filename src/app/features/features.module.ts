@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '@components/components.module';
 
 import { FeaturesComponent } from './features.component';
+import { FolderModule } from './folder/folder.module';
 import { HomeModule } from './home/home.module';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeModule } from './home/home.module';
     CommonModule,
     RouterModule,
     ComponentsModule,
-    HomeModule
+    HomeModule,
+    FolderModule
   ]
 })
 export class FeaturesModule { }

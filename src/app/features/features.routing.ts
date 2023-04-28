@@ -13,6 +13,13 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.routing')
       .then(m => m.HomeRoutingModule),
   },
+  {
+    path: 'folder',
+    component: FeaturesComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./folder/folder.routing')
+      .then(m => m.FolderRoutingModule)
+  }
 ];
 
 @NgModule({

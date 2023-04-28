@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { DropdownsModule } from '@shared/dropdowns/dropdowns.module';
 
@@ -13,7 +14,8 @@ import { FolderComponent } from './folder/folder.component';
   ],
   imports: [
     CommonModule,
-    DropdownsModule
+    DropdownsModule,
+    RouterModule
   ],
   exports: [
     FileComponent,

@@ -1,5 +1,7 @@
-<div class="icon">
-  <i class="bx bx-file"></i>
+<div class="file">
+  <div class="icon">
+    <i class="bx " [ngClass]="getIcon"></i>
+  </div>
+  <span class="name">{{ file.name }}</span>
 </div>
-<span class="name">{{ file.name }}</span>
 <app-dots-dropdown class="actions"></app-dots-dropdown>
