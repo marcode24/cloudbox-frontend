@@ -1,10 +1,10 @@
 <div class="fluid-container">
   <app-actions [folder]="root"></app-actions>
-  <div class="not-items" *ngIf="!root.folders?.length && !root.files?.length">
+  <div class="not-items" *ngIf="root.folders.length < 1 && root.files.length < 1">
     <img src="assets/images/no-files.svg" alt="no-files-image">
     <span class="description">Agrega tu primer archivo o carpeta</span>
   </div>
-  <div class="files" *ngIf="root.folders.length && root.folders.length">
+  <div class="files" *ngIf="root.folders.length > 1 || root.files.length > 1">
     <section class="group" *ngIf="root.folders.length > 0">
       <span class="title">Folders</span>
       <div class="items">

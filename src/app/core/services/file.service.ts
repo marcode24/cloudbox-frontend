@@ -39,4 +39,9 @@ export class FileService {
       return resp.ok;
     }));
   }
+
+  downloadFile(fileID: string): Observable<Blob> {
+    const url = `${base_url}/file/download/${fileID}`;
+    return this.http.get(url, { responseType: 'blob', ...this.headers });
+  }
 }
