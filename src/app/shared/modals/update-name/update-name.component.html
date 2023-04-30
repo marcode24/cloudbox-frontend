@@ -1,4 +1,4 @@
-<div class="modal dialog" #modalFolder>
+<div class="modal dialog" #modalName>
   <div class="modal-content">
     <div class="header">
       <span class="title">Cambiar nombre</span>
@@ -7,9 +7,9 @@
       </div>
     </div>
     <div class="body">
-      <input type="text" placeholder="Nombre de la carpeta" [(ngModel)]="folderName" (keyup.enter)="createFolder()">
+      <input type="text" placeholder="Nombre de la carpeta" [(ngModel)]="newName" (keyup.enter)="updateName()">
       <div class="actions">
-        <button class="btn btn-primary" [disabled]="!validateFolderName()" (click)="createFolder()">Crear</button>
+        <button class="btn btn-primary" [disabled]="!validateFolderName()" (click)="updateName()">Guardar</button>
       </div>
     </div>
   </div>

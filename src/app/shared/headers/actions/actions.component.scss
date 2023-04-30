@@ -5,6 +5,13 @@
   display: block;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
 .list-items {
   position: absolute;
   margin-top: 5px;
@@ -14,6 +21,7 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
   z-index: 10;
   transition: 0.3s ease;
+  right: 1rem;
   display: none;
 
   .item {

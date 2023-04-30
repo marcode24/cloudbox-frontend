@@ -24,6 +24,7 @@
   --fc-white: #{$white-grey};
   --fc-purple: #{$purple};
   --border-input: #{$purple};
+  --input-selection: #{$purple-rgba};
   // --border-input: 1px solid #333639;
 }
 
@@ -214,6 +215,11 @@ input {
     outline: 0;
   }
 
+  &::selection {
+    background: var(--input-selection);
+    color: var(--fc-white);
+  }
+
   &[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
@@ -349,6 +355,18 @@ input {
         font-size: 28px;
         padding: 5px;
       }
+    }
+  }
+
+  & .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
     }
   }
 }

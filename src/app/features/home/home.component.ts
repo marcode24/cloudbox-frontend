@@ -30,9 +30,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.root = this.authService.userActive.rootFolder;
-    this.folderCreatedSubscription = this.folderService.folderCreated.subscribe((folder) => {
-      this.root.folders.push(folder);
-      this.orderFolders();
+    this.folderCreatedSubscription = this.folderService
+      .folderCreated.subscribe(({folder, isNew}) => {
+        if (isNew) this.root.folders.push(folder);
+        else this.root.folders = this.root.folders.map((f) => f._id === folder._id ? folder : f);
+        this.orderFolders();
     });
     this.filesCreatedSubscription = this.fileService.filesCreated.subscribe((files) => {
       this.root.files.push(...files);

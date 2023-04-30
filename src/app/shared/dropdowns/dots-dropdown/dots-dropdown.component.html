@@ -1,12 +1,12 @@
 <button class="options" (click)="changeVisibility()">
   <i class="bx bx-dots-vertical-rounded"></i>
 </button>
-<ul class='dropdown-list' role="menu" #dropdown>
-  <li role="menuitem" class='dropdown-item'>
+<ul class='dropdown-list' role="menu" #dropdown [id]="buildId()" *ngIf="file">
+  <li role="menuitem" class='dropdown-item' (click)="openRenameModal()">
     <i class="bx bx-edit-alt"></i>
     <span class="title">Cambiar nombre</span>
   </li>
-  <li role="menuitem" class='dropdown-item'>
+  <li role="menuitem" class='dropdown-item' *ngIf="!isFile()">
     <i class="bx bx-palette"></i>
     <span class="title">Cambiar color</span>
   </li>

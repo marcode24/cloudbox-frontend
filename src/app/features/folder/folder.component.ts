@@ -31,8 +31,10 @@ export class FolderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.folderCreatedSubscripion = this.folderService.folderCreated.subscribe((folder) => {
-      this.folder.folders.push(folder);
+    this.folderCreatedSubscripion = this.folderService
+      .folderCreated.subscribe(({ folder, isNew }) => {
+      if (isNew) this.folder.folders.push(folder);
+      else this.folder.folders = this.folder.folders.map((f) => f._id === folder._id ? folder : f);
       this.orderFolders();
       this.mixFilesAndFolders();
     });
