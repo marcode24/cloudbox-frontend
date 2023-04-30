@@ -1,19 +1,21 @@
 <div class="items">
-  <div class="item">
-    <div class="icon">
-      <i class="bx" [ngClass]="getIcon"></i>
+  <div class="item" >
+    <div class="data" (click)="goToFolder()">
+      <div class="icon">
+        <i class="bx" [ngClass]="getIcon" [ngStyle]="{'color': (file.color) ? file.color : ''}"></i>
+      </div>
+      <div class="name">
+        <span>{{ file.name }}</span>
+      </div>
+      <div class="type">
+        <span>{{ getExtension() }}</span>
+      </div>
+      <div class="size">
+        <span>{{ file.size | fileSize }}</span>
+      </div>
     </div>
-    <div class="name">
-      <span>{{ file.name }}</span>
-    </div>
-    <div class="type">
-      <span>{{ getExtension() }}</span>
-    </div>
-    <div class="size">
-      <span>{{ file.size | fileSize }}</span>
-    </div>
-    <div class="actions">
-      ...
+    <div class="dots">
+      <app-dots-dropdown class="actions" [file]="file"></app-dots-dropdown>
     </div>
   </div>
 </div>

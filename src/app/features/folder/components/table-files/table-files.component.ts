@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { File } from '@models/file.model';
 import { Folder } from '@models/folder.model';
@@ -13,6 +14,10 @@ import { ICONS } from '@constants/file.constant';
 export class TableFilesComponent {
   @Input() file: File | Folder;
 
+  constructor(
+    private router: Router
+  ) {}
+
   get getIcon(): string {
     if (this.file.type === 'folder') return 'bxs-folder';
     const extension = this.file.name.split('.').pop();
@@ -22,5 +27,11 @@ export class TableFilesComponent {
   getExtension(): string {
     if (this.file.type === 'folder') return 'folder';
     return this.file.name.split('.').pop() as string;
+  }
+
+  goToFolder(): void {
+    if (this.file.type === 'folder') {
+      this.router.navigate(['/folder', this.file._id]);
+    }
   }
 }
