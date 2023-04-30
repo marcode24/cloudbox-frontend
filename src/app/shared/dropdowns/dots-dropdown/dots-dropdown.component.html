@@ -6,7 +6,7 @@
     <i class="bx bx-edit-alt"></i>
     <span class="title">Cambiar nombre</span>
   </li>
-  <li role="menuitem" class='dropdown-item' *ngIf="!isFile()">
+  <li role="menuitem" class='dropdown-item' *ngIf="!isFile()" (click)="openUpdateColorModal()">
     <i class="bx bx-palette"></i>
     <span class="title">Cambiar color</span>
   </li>

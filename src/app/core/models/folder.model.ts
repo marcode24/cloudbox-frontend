@@ -16,4 +16,5 @@ export class Folder {
   files: File[];
   color: string;
   _id?: string;
+  __v?: number;
 }

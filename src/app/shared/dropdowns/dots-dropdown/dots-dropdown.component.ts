@@ -64,4 +64,11 @@ export class DotsDropdownComponent {
     this.hideDropdown();
     this.modalService.openUpdateName(this.file._id as string, this.file.name);
   }
+
+  openUpdateColorModal(): void {
+    if (this.file.type === 'folder') {
+      this.hideDropdown();
+      this.modalService.openUpdateColor(this.file._id as string, this.file.color as string);
+    }
+  }
 }
