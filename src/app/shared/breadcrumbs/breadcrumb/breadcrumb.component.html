@@ -1,0 +1,23 @@
+<div class="items">
+  <div class="more" *ngIf="breadcrumbDropdown.length > 0">
+    <button class="options" (click)="changeVisibility()">
+      <i class="bx bx-dots-vertical-rounded"></i>
+    </button>
+    <ul class="dropdown-list" #dropdown>
+      <li
+        class="dropdown-item"
+        *ngFor="let item of breadcrumbDropdown; let i = index"
+        [routerLink]="[i === 0 ? '/' : '/folder', item._id]"
+        >
+        <i class="bx bxs-folder" [ngStyle]="{'color': item.color}"></i>
+        <span class="title">{{ item.name }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="item" *ngFor="let item of breadcrumbShown; let i = index">
+    <a (click)="navigateToFolder(item._id)" [ngClass]="{'active': i === breadcrumbShown.length - 1}">
+      {{ item.name }}
+    </a>
+    <i class="bx bx-chevron-right" *ngIf="i !== breadcrumbShown.length - 1"></i>
+  </div>
+</div>

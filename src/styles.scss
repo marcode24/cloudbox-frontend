@@ -49,6 +49,7 @@ body.modal-open {
 }
 
 
+
 .btn {
   @include btn;
 
@@ -411,6 +412,7 @@ input {
     @include fs-4;
     font-weight: 600;
     color: var(--fc-primary);
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -433,3 +435,7 @@ input {
     color: $orange;
   }
 }
+
+
+
+

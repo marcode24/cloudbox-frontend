@@ -1,0 +1,143 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & .item {
+    @include fs-2;
+    @include fw-500;
+    color: var(--fc-primary);
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+
+    & a {
+      color: var(--fc-primary);
+      text-decoration: none;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.5rem;
+      transition: 0.3s ease;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &::selection {
+        background: transparent;
+      }
+
+      &.active {
+        color: var(--fc-purple);
+      }
+
+      &:hover {
+        color: var(--fc-purple);
+        background: var(--bg-hover-3)
+      }
+
+    }
+
+    & i {
+      @include fs-3;
+    }
+  }
+}
+
+.more {
+  position: relative;
+}
+
+.options {
+  @include fs-3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: transparent;
+  transition: 0.4s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bg-hover-2);
+  }
+}
+
+ul {
+  display: none;
+  z-index: 2;
+  list-style-type: none;
+  position: absolute;
+  opacity: 0;
+  top: 40px;
+  left: 5px;
+  background-color: #f7f7f7;
+  padding: 0;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: none;
+  visibility: hidden;
+  height: fit-content;
+  transition: visibility 0.2s, opacity 0.2s linear, bottom 0.2s linear,
+    box-shadow 0.2s linear;
+  min-width: 15rem;
+
+  &.show {
+    opacity: 1;
+    bottom: 0;
+    display: block;
+    visibility: visible;
+    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 0 1rem;
+    gap: 1.2rem;
+
+    &:hover {
+      background-color: #b8c1ce77;
+      color: var(--font-color-4);
+    }
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &:only-child {
+      border-radius: 10px;
+    }
+
+    & .title {
+      @include fs-5;
+      @include fw-400;
+      color: var(--fc-primary);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    & i {
+      @include fs-3;
+      @include fw-500;
+      color: var(--fc-primary);
+    }
+  }
+}

@@ -2,6 +2,8 @@ import { File } from "@models/file.model";
 import { Folder } from "@models/folder.model";
 import { User } from "@models/user.model";
 
+import { IBreadcrumb } from "./breadcrumb.interface";
+
 export interface IUserCreated {
   ok: boolean;
   user: User;
@@ -20,6 +22,7 @@ export interface IFolderCreated {
 export interface IFolderResponse {
   ok: boolean,
   folder: Folder,
+  breadcrumb?: IBreadcrumb[],
 }
 
 export interface IFileResponse {

@@ -6,6 +6,7 @@ import { Observable, catchError, map, of } from 'rxjs';
 
 import { Folder } from '@models/folder.model';
 
+import { IBreadcrumb } from '@interfaces/breadcrumb.interface';
 import { IFolderCreated, IFolderResponse } from '@interfaces/response.interface';
 
 import Storage from '@utils/storage.util';
@@ -18,6 +19,7 @@ const base_url = environment.base_url;
 export class FolderService {
   folderCreated: EventEmitter<{folder: Folder, isNew: boolean}> = new EventEmitter();
   folderTemp: Folder;
+  breadcrumb: IBreadcrumb[] = [];
 
   get headers() {
     return {
@@ -47,6 +49,7 @@ export class FolderService {
         const { folder } = resp;
         if(!folder) return false;
         this.folderTemp = folder;
+        this.breadcrumb = resp.breadcrumb || [];
         return true;
     }), catchError(() => of(false)));
   }

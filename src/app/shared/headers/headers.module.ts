@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { BreadcrumbsModule } from '@shared/breadcrumbs/breadcrumbs.module';
+
 import { ActionsComponent } from './actions/actions.component';
 
 @NgModule({
@@ -8,7 +10,8 @@ import { ActionsComponent } from './actions/actions.component';
     ActionsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BreadcrumbsModule
   ],
   exports: [
     ActionsComponent,
