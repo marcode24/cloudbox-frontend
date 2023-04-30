@@ -38,6 +38,7 @@ export class NewFolderComponent implements OnInit, OnDestroy {
   openModal(): void {
     this.modalFolder.nativeElement.classList.add('modal-open');
     this.bodyElement.classList.add('modal-open');
+    this.modalFolder.nativeElement.querySelector('input').focus();
     this.modalOpened = true;
   }
 
