@@ -10,7 +10,7 @@
     <i class="bx bx-palette"></i>
     <span class="title">Cambiar color</span>
   </li>
-  <li role="menuitem" class='dropdown-item' (click)="downloadFile()">
+  <li role="menuitem" class='dropdown-item' (click)="downloadFile()" *ngIf="isFile()"> <!-- wait to compress zip -->
     <i class="bx bx-download"></i>
     <span class="title">Descargar</span>
   </li>
