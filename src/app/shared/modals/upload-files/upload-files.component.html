@@ -25,7 +25,9 @@
                 <div class="file-icon">
                   <i class="bx" [ngClass]="getIcon(file)"></i>
                 </div>
-                <span class="file-name">{{ file.name }}</span>
+                <div class="file-name">
+                  <span>{{ file.name }}</span>
+                </div>
                 <span class="file-size">{{ file.size | fileSize }}</span>
               </div>
               <div class="file-actions">

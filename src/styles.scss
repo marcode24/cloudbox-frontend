@@ -328,14 +328,14 @@ input {
 }
 
 .modal-content {
-  min-width: 400px;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
-  max-width: 30rem;
+  max-width: 40rem;
   background-color: var(--bg);
   padding: 1rem;
   gap: 1.2rem;
+  width: 75%;
 
   & .header {
     display: flex;
@@ -377,6 +377,7 @@ input {
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 }
