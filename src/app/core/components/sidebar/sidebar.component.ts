@@ -32,4 +32,9 @@ export class SidebarComponent implements OnDestroy, OnInit {
     const percentage = this.userActive.usedSpace / this.userActive.totalSpace * 100;
     return `${percentage}%`;
   }
+
+  changeVisibilitySidebar(): void {
+    const sidebarElement = document.querySelector('.sidebar') as HTMLElement;
+    sidebarElement.classList.toggle('closed');
+  }
 }

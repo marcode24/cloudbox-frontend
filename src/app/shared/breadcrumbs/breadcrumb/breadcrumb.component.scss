@@ -1,5 +1,6 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
+@import 'settings/_media.scss';
 
 .items {
   display: flex;
@@ -16,6 +17,14 @@
     display: flex;
     align-items: center;
     max-width: 300px;
+
+    @include width-medium {
+      @include fs-4;
+    }
+
+    @include width-small {
+      @include fs-5;
+    }
 
     & a {
       color: var(--fc-primary);

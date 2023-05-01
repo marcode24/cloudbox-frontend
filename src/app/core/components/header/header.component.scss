@@ -1,20 +1,28 @@
 @import 'elements/_buttons.scss';
+@import 'settings/_media.scss';
+@import 'settings/_typography.scss';
 
 header {
   position: fixed;
   margin-left: 250px;
   height: 75px;
-  padding: 1rem 0.8rem;
   width: -webkit-fill-available;
   background: var(--bg);
   border-bottom: 2px solid #e0e0e0;
-  z-index: 100;
+  z-index: 90;
+
+  @include width-medium {
+    margin-left: 0;
+    height: 70px;
+  }
 
   & .options {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding: 0 1rem;
+    height: 100%;
 
     & .search {
       flex: 1;
@@ -64,14 +72,31 @@ header {
   }
 }
 
-.btn {
-  &.filter {
-    & i {
-      @include fs-4;
-    }
+.burger {
+  display: none;
+  color: var(--fc-primary);
+  transition: 0.5s;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0.5rem;
+  width: 45px;
+  height: 45px;
+
+  &:hover {
+    background: var(--bg-hover-2);
+    cursor: pointer;
+  }
+
+  & i {
+    @include fs-1;
+  }
+
+  @include width-medium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
-
 
 .user {
   flex: 1;

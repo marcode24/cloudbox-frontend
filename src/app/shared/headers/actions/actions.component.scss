@@ -1,5 +1,18 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
+@import 'settings/_media.scss';
+
+.btn-select {
+  & .title {
+    @include width-small {
+      display: none;
+    }
+  }
+
+  @include width-small {
+    width: 40px;
+  }
+}
 
 .btn-select.open ~ .list-items {
   display: block;
