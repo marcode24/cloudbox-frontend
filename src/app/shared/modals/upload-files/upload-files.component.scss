@@ -101,6 +101,11 @@
     @include fs-6;
     @include fw-500;
     color: var(--fc-purple);
+
+    &.error {
+      @include fs-4;
+      color: var(--fc-red);
+    }
   }
 }
 
