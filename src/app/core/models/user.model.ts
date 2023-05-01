@@ -11,5 +11,7 @@ export class User {
   createdAt: Date;
   updatedAt: Date;
   rootFolder: Folder;
+  totalSpace: number;
+  usedSpace: number;
   _id?: string;
 }

@@ -23,5 +23,21 @@
         <span class="name">Deleted</span>
       </a>
     </li>
+    <li class="item space">
+      <div class="used-space">
+        <span class="name">Espacio utilizado</span>
+        <div class="progress-bar">
+          <div class="progress"
+            #progress
+            [ngStyle]="{'width': getProgress() }">
+          </div>
+        </div>
+        <div class="percentage">
+          <span class="used">{{ userActive.usedSpace | fileSize }}</span>
+          <span class="slash">/</span>
+          <span class="remaining">{{ userActive.totalSpace | fileSize }}</span>
+        </div>
+      </div>
+    </li>
   </ul>
 </nav>

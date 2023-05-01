@@ -17,6 +17,7 @@ const base_url = environment.base_url;
 })
 export class FileService {
   filesCreated: EventEmitter<FileModel[]> = new EventEmitter();
+  updateTotalSize: EventEmitter<number> = new EventEmitter();
 
   get headers() {
     return {
@@ -36,6 +37,8 @@ export class FileService {
     files.forEach((file) => formData.append('file', file));
     return this.http.post<IFileResponse>(url, formData, this.headers).pipe(map(resp => {
       this.filesCreated.emit(resp.files);
+      const total = resp.files.reduce((acc, file) => acc + file.size, 0);
+      this.updateTotalSize.emit(total);
       return resp.ok;
     }));
   }
