@@ -14,4 +14,5 @@ export class File {
   folder: Folder;
   type: string;
   _id?: string;
+  color?: string;
 }

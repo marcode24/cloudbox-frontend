@@ -1,0 +1,23 @@
+<div class="modal dialog" #modalColors>
+  <div class="modal-content">
+    <div class="header">
+      <span class="title">Cambiar color</span>
+      <div class="i-wrapper">
+        <i class="bx bx-x" (click)="closeModal()"></i>
+      </div>
+    </div>
+    <div class="body">
+      <div class="colors">
+        <div class="color"
+          *ngFor="let color of colors"
+          [ngStyle]="{'background-color': color}"
+          (click)="selectColor(color)"
+          [ngClass]="{'selected': color === selectedColor}">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" [disabled]="!selectedColor" (click)="updateColor()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

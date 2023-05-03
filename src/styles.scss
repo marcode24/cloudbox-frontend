@@ -23,7 +23,9 @@
   --fc-secondary: #{$dark-grey};
   --fc-white: #{$white-grey};
   --fc-purple: #{$purple};
+  --fc-red: #{$red};
   --border-input: #{$purple};
+  --input-selection: #{$purple-rgba};
   // --border-input: 1px solid #333639;
 }
 
@@ -44,8 +46,13 @@ body.modal-open {
     min-height: 100vh;
     margin-left: 250px;
     width: auto;
+
+    @include width-medium {
+      margin-left: 0;
+    }
   }
 }
+
 
 
 .btn {
@@ -67,6 +74,10 @@ body.modal-open {
   flex-direction: column;
   gap: 1rem;
   min-height: calc(100vh - 75px);
+
+  @include width-medium {
+    padding: 0.6rem 0.4rem;
+  }
 }
 
 
@@ -214,6 +225,11 @@ input {
     outline: 0;
   }
 
+  &::selection {
+    background: var(--input-selection);
+    color: var(--fc-white);
+  }
+
   &[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
@@ -312,14 +328,14 @@ input {
 }
 
 .modal-content {
-  min-width: 400px;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
-  max-width: 30rem;
+  max-width: 40rem;
   background-color: var(--bg);
   padding: 1rem;
   gap: 1.2rem;
+  width: 75%;
 
   & .header {
     display: flex;
@@ -349,6 +365,19 @@ input {
         font-size: 28px;
         padding: 5px;
       }
+    }
+  }
+
+  & .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 }
@@ -393,6 +422,7 @@ input {
     @include fs-4;
     font-weight: 600;
     color: var(--fc-primary);
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -415,3 +445,7 @@ input {
     color: $orange;
   }
 }
+
+
+
+

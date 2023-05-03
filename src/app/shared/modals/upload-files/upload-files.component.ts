@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } fro
 
 import { Subscription } from 'rxjs';
 
+import { AuthService } from '@services/auth.service';
 import { FileService } from '@services/file.service';
 import { ModalService } from '@services/modal.service';
 
@@ -25,6 +26,8 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
   private openModalSubscription: Subscription;
   private modalOpened = false;
   private folderId: string;
+  usedSpace: number;
+  totalSpace: number;
 
   uploading = false;
 
@@ -34,6 +37,7 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
   constructor(
     private modalService: ModalService,
     private fileService: FileService,
+    private authService: AuthService
   ) { }
 
   ngOnDestroy(): void {
@@ -44,6 +48,8 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
     this.openModalSubscription = this.modalService.openNewFileModal
       .subscribe(({ folderID }) => {
         this.folderId = folderID;
+        this.usedSpace = this.authService.userActive.usedSpace;
+        this.totalSpace = this.authService.userActive.totalSpace;
         this.openModal();
     });
   }
@@ -71,6 +77,7 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
       return file;
     });
     this.files = [...this.files, ...files];
+    this.validateUsedSpace();
   }
 
   getIcon(file: File): string {
@@ -86,7 +93,19 @@ export class UploadFilesComponent implements OnInit, OnDestroy {
       && ALLOWED_FILE_TYPES.includes(file.type));
   }
 
+  validateUsedSpace(): boolean {
+    const totalSize = this.files.reduce((acc, file) => acc + file.size, 0);
+    return this.usedSpace + totalSize <= this.totalSpace;
+  }
+
+  get getUsedSpace(): number {
+    return this.usedSpace;
+  }
+
   uploadFiles(): void {
+    if (!this.validateUsedSpace()) {
+      return;
+    }
     if (this.validateFiles() && this.folderId) {
       this.uploading = true;
       this.fileService.createFiles(this.files, this.folderId).subscribe({

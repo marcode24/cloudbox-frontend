@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -14,25 +15,30 @@ import { Folder } from '@models/folder.model';
   styleUrls: ['./folder.component.scss']
 })
 export class FolderComponent implements OnInit, OnDestroy {
+  private folderCreatedSubscripion: Subscription;
+  private filesUploadedSubscription: Subscription;
+  private routerSubscription: Subscription;
   folder: Folder;
-  folderCreatedSubscripion: Subscription;
-  filesUploadedSubscription: Subscription;
   loading = false;
   allFiles: (Folder | File)[];
 
   constructor(
     private folderService: FolderService,
     private fileService: FileService,
+    private activadedRoute: ActivatedRoute,
   ) { }
 
   ngOnDestroy(): void {
     this.folderCreatedSubscripion.unsubscribe();
     this.filesUploadedSubscription.unsubscribe();
+    this.routerSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.folderCreatedSubscripion = this.folderService.folderCreated.subscribe((folder) => {
-      this.folder.folders.push(folder);
+    this.folderCreatedSubscripion = this.folderService
+      .folderCreated.subscribe(({ folder, isNew }) => {
+      if (isNew) this.folder.folders.push(folder);
+      else this.folder.folders = this.folder.folders.map((f) => f._id === folder._id ? folder : f);
       this.orderFolders();
       this.mixFilesAndFolders();
     });
@@ -40,7 +46,7 @@ export class FolderComponent implements OnInit, OnDestroy {
       this.folder.files.push(...files);
       this.mixFilesAndFolders();
     });
-    this.getFolder();
+    this.routerSubscription = this.activadedRoute.params.subscribe(() => this.getFolder());
   }
 
   getFolder(): void {

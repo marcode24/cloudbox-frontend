@@ -1,52 +1,104 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
+@import 'settings/_media.scss';
 
 .item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 3.2rem;
-  padding: 0 0.5rem;
+  justify-content: space-between;
+  padding: 0.6rem 0.5rem;
   gap: 1rem;
   border-radius: 1rem;
   transition: 0.3s ease;
   cursor: pointer;
 
-  &:hover {
-    background: var(--bg-hover-2);
+  @include width-medium {
+    padding: 0.5rem 0.2rem;
   }
 
-  & .icon {
-    @include fs-2;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
+  &:hover {
+    background: var(--bg-hover-3);
+  }
+
+  & .data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    max-width: 80%;
+    flex: 1;
+
+    @include width-medium {
+      gap: 0.5rem;
+    }
+
+    & .icon {
+      @include fs-2;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include width-medium {
+        width: 2rem;
+        height: 2rem;
+        @include fs-3;
+      }
+    }
+
+    & .name, & .type, & .size {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & .name {
+      @include fs-5;
+      @include fw-400;
+      flex: 2;
+      color: var(--fc-primary);
+
+      @include width-medium {
+        @include fs-6;
+        flex: 3;
+      }
+    }
+
+    & .type, & .size {
+      @include fs-6;
+      flex: 1;
+      color: var(--fc-secondary);
+      text-transform: uppercase;
+
+      @include width-medium {
+        @include fs-7;
+      }
+    }
+
+    & .type {
+
+      @include width-medium {
+        display: none;
+      }
+    }
+  }
+
+
+  & .dots {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
+    justify-content: flex-end;
 
-  & .name, & .type, & .size {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+    & .actions {
+      margin-right: 1rem;
 
-  & .name {
-    @include fs-5;
-    @include fw-400;
-    flex: 2;
-    color: var(--fc-primary);
-  }
-
-  & .type, & .size {
-    @include fs-6;
-    flex: 1;
-    color: var(--fc-secondary);
-  }
-
-  & .actions {
-    flex: 1;
-    text-align: center;
+      .dropdown-list {
+        top: 40px;
+      }
+    }
   }
 }

@@ -1,8 +1,9 @@
-<nav class="sidebar">
+<nav class="sidebar closed">
   <div class="logo">
-    <i class="bx bx-folder"></i>
-    <!-- <img src="" alt="cloud_box_image"> -->
     <span class="name">Cloud Box</span>
+    <div class="close">
+      <i class="bx bx-x" (click)="changeVisibilitySidebar()"></i>
+    </div>
   </div>
   <ul class="items">
     <li class="item">
@@ -11,17 +12,21 @@
         <span class="name">Home</span>
       </a>
     </li>
-    <li class="item">
-      <a href="#">
-        <i class='bx bx-cog'></i>
-        <span class="name">Settings</span>
-      </a>
-    </li>
-    <li class="item">
-      <a href="#">
-        <i class='bx bx-trash'></i>
-        <span class="name">Deleted</span>
-      </a>
+    <li class="item space">
+      <div class="used-space">
+        <span class="name">Espacio utilizado</span>
+        <div class="progress-bar">
+          <div class="progress"
+            #progress
+            [ngStyle]="{'width': getProgress() }">
+          </div>
+        </div>
+        <div class="percentage">
+          <span class="used">{{ userActive.usedSpace | fileSize }}</span>
+          <span class="slash">/</span>
+          <span class="remaining">{{ userActive.totalSpace | fileSize }}</span>
+        </div>
+      </div>
     </li>
   </ul>
 </nav>
