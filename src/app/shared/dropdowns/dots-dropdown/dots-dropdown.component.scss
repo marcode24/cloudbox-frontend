@@ -72,7 +72,9 @@ ul {
 
     &:last-child {
       border-radius: 0 0 10px 10px;
+    }
 
+    &.danger {
       &:hover {
         background-color: #ff72568c;
       }

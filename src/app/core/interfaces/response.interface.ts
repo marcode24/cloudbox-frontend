@@ -28,5 +28,6 @@ export interface IFolderResponse {
 export interface IFileResponse {
   ok: boolean,
   msg: string,
-  files: File[]
+  files: File[],
+  file: File,
 }

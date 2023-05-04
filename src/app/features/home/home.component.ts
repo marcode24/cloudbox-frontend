@@ -15,8 +15,10 @@ import { Folder } from '@models/folder.model';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   root: Folder;
-  folderCreatedSubscription: Subscription;
-  filesCreatedSubscription: Subscription;
+  private folderCreatedSubscription: Subscription;
+  private filesCreatedSubscription: Subscription;
+  private fileDeletedSubscription: Subscription;
+
   constructor(
     private authService: AuthService,
     private folderService: FolderService,
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.folderCreatedSubscription.unsubscribe();
     this.filesCreatedSubscription.unsubscribe();
+    this.fileDeletedSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -45,6 +48,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.filesCreatedSubscription = this.fileService.filesCreated.subscribe((files) => {
       this.root.files.push(...files);
       this.orderFiles();
+    });
+    this.fileDeletedSubscription = this.fileService.fileDeleted.subscribe((file) => {
+      this.root.files = this.root.files.filter((f) => f._id !== file._id);
     });
   }
 

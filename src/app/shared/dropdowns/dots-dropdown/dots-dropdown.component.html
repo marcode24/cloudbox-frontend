@@ -14,7 +14,7 @@
     <i class="bx bx-download"></i>
     <span class="title">Descargar</span>
   </li>
-  <li role="menuitem" class='dropdown-item'>
+  <li role="menuitem" class='dropdown-item danger' (click)="deleteFile()" *ngIf="isFile()">
     <i class="bx bx-trash"></i>
     <span class="title">Eliminar</span>
   </li>
