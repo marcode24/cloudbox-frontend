@@ -301,6 +301,7 @@ input {
     & a {
       color: var(--fc-purple);
       text-decoration: none;
+      @include fw-500;
 
       &:hover {
         cursor: pointer;

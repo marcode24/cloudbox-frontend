@@ -3,15 +3,31 @@
     <div class="burger" (click)="changeVisibilitySidebar()">
       <i class="bx bx-menu"></i>
     </div>
-    <div class="search">
+    <div class="search" #inputSearch>
       <div class="input-group">
         <input type="text" class="icon" #txtSearch
-          placeholder="Search...">
+          placeholder="Search..." (focus)="focusInputSearch()" (blur)="focusInputSearch()">
         <i class="bx bx-search"></i>
       </div>
     </div>
-    <div class="user">
-      here's user
+    <div class="profile">
+      <div class="user">
+      <div class="user-data" (click)="changeVisibilityOptions()">
+          <div class="user-img">
+            <img [src]="userActive.image" alt="user-image">
+          </div>
+          <span class="name">{{ userActive.name }} {{ userActive.surname }}</span>
+          <div class="icon">
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </div>
+        <ul class="dropdown-user" #dropdownUser>
+          <li class="item" (click)="logout()">
+            <i class="bx bx-log-out"></i>
+            <span>Cerrar sesión</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

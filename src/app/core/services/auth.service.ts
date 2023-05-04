@@ -60,4 +60,9 @@ export class AuthService {
         return true;
     }), catchError(() => of(false)));
   }
+
+  logout(): void {
+    Storage.removeLocalStorage('token');
+    this.router.navigateByUrl('/login');
+  }
 }
