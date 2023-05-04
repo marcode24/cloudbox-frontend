@@ -1,19 +1,21 @@
-<header class="actions">
-  <app-breadcrumb></app-breadcrumb>
-  <div class="new">
-    <button #btnDrop class="btn btn-primary btn-select" (click)="openDrop(btnDrop)">
-      <span class="title">Nuevo</span>
-      <i class="bx bx-plus"></i>
-    </button>
-    <ul class="list-items">
-      <li class="item" (click)="openNewFolderModal(btnDrop)">
-        <i class="bx bx-folder-plus"></i>
-        <span class="title">Carpeta nueva</span>
-      </li>
-      <li class="item" (click)="openNewFileModal(btnDrop)">
-        <i class="bx bx-upload"></i>
-        <span class="title">Subir archivo</span>
-      </li>
-    </ul>
+<header>
+  <div class="actions">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="new">
+      <button #btnDrop class="btn btn-primary btn-select" (click)="openDrop(btnDrop)">
+        <span class="title">Nuevo</span>
+        <i class="bx bx-plus"></i>
+      </button>
+      <ul class="list-items">
+        <li class="item" (click)="openNewFolderModal(btnDrop)">
+          <i class="bx bx-folder-plus"></i>
+          <span class="title">Carpeta nueva</span>
+        </li>
+        <li class="item" (click)="openNewFileModal(btnDrop)">
+          <i class="bx bx-upload"></i>
+          <span class="title">Subir archivo</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </header>

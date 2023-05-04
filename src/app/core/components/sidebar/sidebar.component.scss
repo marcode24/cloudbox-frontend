@@ -144,3 +144,25 @@ nav {
     justify-content: center;
   }
 }
+
+.overlay {
+  background-color: rgba(71, 80, 87, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: left 0.3s ease-in-out;
+
+  &.opened {
+    position: fixed;
+    opacity: 1;
+    left: 250px;
+    transition: left 0.3s ease-in-out;
+  }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
