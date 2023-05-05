@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
@@ -13,6 +13,8 @@ import { FileService } from '@services/file.service';
 export class SidebarComponent implements OnDestroy, OnInit {
   userActive = this.authService.userActive;
   private totalSizeSubscription: Subscription;
+  @ViewChild('overlay') overlay: ElementRef;
+
   constructor(
     private authService: AuthService,
     private fileService: FileService
@@ -36,5 +38,6 @@ export class SidebarComponent implements OnDestroy, OnInit {
   changeVisibilitySidebar(): void {
     const sidebarElement = document.querySelector('.sidebar') as HTMLElement;
     sidebarElement.classList.toggle('closed');
+    this.overlay.nativeElement.classList.toggle('opened');
   }
 }

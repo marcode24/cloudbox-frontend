@@ -17,6 +17,7 @@ const base_url = environment.base_url;
 })
 export class FileService {
   filesCreated: EventEmitter<FileModel[]> = new EventEmitter();
+  fileDeleted: EventEmitter<FileModel> = new EventEmitter();
   updateTotalSize: EventEmitter<number> = new EventEmitter();
 
   get headers() {
@@ -47,4 +48,14 @@ export class FileService {
     const url = `${base_url}/file/download/${fileID}`;
     return this.http.get(url, { responseType: 'blob', ...this.headers });
   }
+
+  deleteFile(fileID: string): Observable<boolean> {
+    const url = `${base_url}/file/${fileID}`;
+    return this.http.delete<IFileResponse>(url, this.headers).pipe(map(resp => {
+      this.fileDeleted.emit(resp.file);
+      this.updateTotalSize.emit(-resp.file.size);
+      return resp.ok;
+    }));
+  }
+
 }

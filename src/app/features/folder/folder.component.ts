@@ -18,6 +18,8 @@ export class FolderComponent implements OnInit, OnDestroy {
   private folderCreatedSubscripion: Subscription;
   private filesUploadedSubscription: Subscription;
   private routerSubscription: Subscription;
+  private fileDeletedSubscription: Subscription;
+
   folder: Folder;
   loading = false;
   allFiles: (Folder | File)[];
@@ -32,6 +34,7 @@ export class FolderComponent implements OnInit, OnDestroy {
     this.folderCreatedSubscripion.unsubscribe();
     this.filesUploadedSubscription.unsubscribe();
     this.routerSubscription.unsubscribe();
+    this.fileDeletedSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -47,6 +50,10 @@ export class FolderComponent implements OnInit, OnDestroy {
       this.mixFilesAndFolders();
     });
     this.routerSubscription = this.activadedRoute.params.subscribe(() => this.getFolder());
+    this.fileDeletedSubscription = this.fileService.fileDeleted.subscribe((file) => {
+      this.folder.files = this.folder.files.filter((f) => f._id !== file._id);
+      this.mixFilesAndFolders();
+    });
   }
 
   getFolder(): void {

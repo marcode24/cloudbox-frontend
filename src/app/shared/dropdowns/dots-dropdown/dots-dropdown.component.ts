@@ -71,4 +71,14 @@ export class DotsDropdownComponent {
       this.modalService.openUpdateColor(this.file._id as string, this.file.color as string);
     }
   }
+
+  deleteFile(): void {
+    if (this.isFile()) {
+      this.fileService.deleteFile(this.file._id as string).subscribe({
+        complete: () => {
+          this.hideDropdown();
+        }
+      });
+    }
+  }
 }
