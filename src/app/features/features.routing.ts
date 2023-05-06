@@ -19,6 +19,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import('./folder/folder.routing')
       .then(m => m.FolderRoutingModule)
+  },
+  {
+    path: 'search',
+    component: FeaturesComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./search/search.routing')
+      .then(m => m.SearchRoutingModule)
   }
 ];
 

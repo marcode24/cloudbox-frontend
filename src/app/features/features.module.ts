@@ -7,6 +7,7 @@ import { ComponentsModule } from '@components/components.module';
 import { FeaturesComponent } from './features.component';
 import { FolderModule } from './folder/folder.module';
 import { HomeModule } from './home/home.module';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeModule } from './home/home.module';
     RouterModule,
     ComponentsModule,
     HomeModule,
-    FolderModule
+    FolderModule,
+    SearchModule
   ]
 })
 export class FeaturesModule { }

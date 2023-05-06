@@ -5,8 +5,15 @@
     </div>
     <div class="search" #inputSearch>
       <div class="input-group">
-        <input type="text" class="icon" #txtSearch
-          placeholder="Search..." (focus)="focusInputSearch()" (blur)="focusInputSearch()">
+        <input
+          type="text"
+          class="icon"
+          placeholder="Search..."
+          #txtSearch
+          (focus)="focusInputSearch()"
+          (blur)="focusInputSearch()"
+          (keyup.enter)="goToSearch(txtSearch.value)"
+          [value]="currentValueSearch">
         <i class="bx bx-search"></i>
       </div>
     </div>

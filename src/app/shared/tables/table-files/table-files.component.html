@@ -13,6 +13,9 @@
       <div class="size">
         <span>{{ file.size | fileSize }}</span>
       </div>
+      <div class="path" *ngIf="isSearch" (click)="goToFolderFromPath()">
+        <span>{{ buildPath() }}</span>
+      </div>
     </div>
     <div class="dots">
       <app-dots-dropdown class="actions" [file]="file"></app-dots-dropdown>

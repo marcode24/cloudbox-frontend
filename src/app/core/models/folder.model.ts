@@ -17,4 +17,5 @@ export class Folder {
   color: string;
   _id?: string;
   __v?: number;
+  path?: Folder[];
 }

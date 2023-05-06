@@ -58,4 +58,9 @@ export class FileService {
     }));
   }
 
+  searchFiles(query: string): Observable<IFileResponse> {
+    const url = `${base_url}/file/search?q=${query}`;
+    return this.http.get<IFileResponse>(url, this.headers);
+  }
+
 }

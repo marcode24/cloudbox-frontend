@@ -67,7 +67,7 @@
       }
     }
 
-    & .type, & .size {
+    & .type, & .size, & .path {
       @include fs-6;
       flex: 1;
       color: var(--fc-secondary);
@@ -78,8 +78,21 @@
       }
     }
 
-    & .type {
+    & .path {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
+      &:hover {
+        text-decoration: underline;
+        color: var(--fc-purple);
+      }
+      @include width-small {
+        display: none;
+      }
+    }
+
+    & .type{
       @include width-medium {
         display: none;
       }

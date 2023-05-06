@@ -15,4 +15,5 @@ export class File {
   type: string;
   _id?: string;
   color?: string;
+  path?: Folder[];
 }
