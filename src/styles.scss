@@ -225,6 +225,14 @@ form {
         width: 100%;
         padding-right: 2.3rem;
         border: 1px solid transparent;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid var(--border-input);
+          background: var(--bg-2);
+          color: var(--fc-primary);
+          outline: 0;
+        }
       }
     }
 
