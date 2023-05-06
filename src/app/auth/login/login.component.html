@@ -1,23 +1,18 @@
-<div class="auth-wrapper">
-  <div class="container">
-    <section class="logo-content">
-      <div class="logo">
-        <img src="" alt="logo_image">
-      </div>
-      <img src="assets/images/login.svg" alt="media" class="login-image">
-    </section>
-    <section class="form-group">
-      <div class="main">
-        <span class="title">Iniciar sesión</span>
-        <span class="sign-up">¿No tienes una cuenta?
-          <a routerLink="/register">Regístrate</a>
-        </span>
-      </div>
-      <app-login-form
-        (loginData)="login($event)"
-        [showErrors]="showErrors"
-        [errors]="errors"
-      ></app-login-form>
-    </section>
-  </div>
+<div class="container">
+  <figure>
+    <img src="assets/images/login.svg" alt="media" class="login-image">
+  </figure>
+  <section class="form-group">
+    <div class="main">
+      <span class="title">Iniciar sesión</span>
+      <span class="sign-up">¿No tienes una cuenta?
+        <a routerLink="/register">Regístrate</a>
+      </span>
+    </div>
+    <app-login-form
+      (loginData)="login($event)"
+      [showErrors]="showErrors"
+      [errors]="errors"
+    ></app-login-form>
+  </section>
 </div>

@@ -123,30 +123,45 @@ body.modal-open {
   background: var(--bg);
 
   & .container {
-    min-height: 100vh;
+    min-height: calc(100vh - 5rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 10rem;
     width: 100%;
-    padding: 1rem 1.8rem;
+    padding: 0 1.8rem;
     max-width: 1400px;
     margin: 0 auto;
+
+    @include width-large {
+      gap: 5rem;
+    }
 
     @include width-medium {
       flex-direction: column;
       gap: 2rem;
+      padding: 0.8rem 1rem;
     }
 
-    @include width-small {
-      padding: 1rem 0.8rem;
-    }
+    figure {
+      width: 50%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    & .logo-content {
       @include width-medium {
         display: none;
       }
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
     }
+
   }
 
   & section {
@@ -313,10 +328,6 @@ input {
 
   @include width-medium {
     flex: none;
-    width: 80%;
-  }
-
-  @include width-small {
     width: 100%;
   }
 }
@@ -329,7 +340,7 @@ input {
   gap: 0.5rem;
 
   & .title {
-    @include fs-1;
+    @include fs-2;
     @include fw-600;
     color: var(--fc-purple);
   }
