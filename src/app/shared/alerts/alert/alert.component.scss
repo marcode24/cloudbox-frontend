@@ -1,11 +1,11 @@
 @import 'settings/_colors.scss';
 @import 'settings/_typography.scss';
+@import 'settings/_media.scss';
 
 .alert {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 75%;
   border-radius: 1rem;
   padding: 0.6rem 0.8rem;
   box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
@@ -14,7 +14,11 @@
   pointer-events: none;
   transform: translateY(100px);
   transition: transform 0.5s ease-in;
-  max-width: 25rem;
+  max-width: 35rem;
+
+  @include width-small {
+    left: 20px;
+  }
 
   &.success {
     background-color: $green;
@@ -47,7 +51,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
     @include fs-6;
     @include fw-500;
     color: var(--fc-white);
@@ -57,7 +61,7 @@
     }
 
     & .icon {
-      @include fs-5;
+      @include fs-3;
       width: 25px;
       height: 25px;
       display: flex;
