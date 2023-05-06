@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { AlertsModule } from '@shared/alerts/alerts.module';
+
 import { ComponentsModule } from '@components/components.module';
 
 import { FeaturesComponent } from './features.component';
@@ -19,7 +21,8 @@ import { SearchModule } from './search/search.module';
     ComponentsModule,
     HomeModule,
     FolderModule,
-    SearchModule
+    SearchModule,
+    AlertsModule,
   ]
 })
 export class FeaturesModule { }

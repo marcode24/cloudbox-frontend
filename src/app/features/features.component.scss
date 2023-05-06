@@ -3,6 +3,7 @@
 .content {
   padding-top: 75px;
   height: 100%;
+  position: relative;
 
   @include width-medium {
     padding-top: 70px;

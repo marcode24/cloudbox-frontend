@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
+import { AlertService } from '@services/alert.service';
 import { AuthService } from '@services/auth.service';
 import { FileService } from '@services/file.service';
 import { FolderService } from '@services/folder.service';
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private folderService: FolderService,
     private fileService: FileService,
+    private alertService: AlertService,
   ) { }
 
   ngOnDestroy(): void {
@@ -43,16 +45,35 @@ export class HomeComponent implements OnInit, OnDestroy {
     ];
     this.folderCreatedSubscription = this.folderService
       .folderCreated.subscribe(({folder, isNew}) => {
-        if (isNew) this.root.folders.push(folder);
-        else this.root.folders = this.root.folders.map((f) => f._id === folder._id ? folder : f);
+        if (isNew) {
+          this.root.folders.push(folder);
+          this.alertService.emitAlert({
+            type: 'success',
+            message: 'Carpeta creada correctamente',
+          });
+        } else {
+          this.root.folders = this.root.folders.map((f) => f._id === folder._id ? folder : f);
+          this.alertService.emitAlert({
+            type: 'success',
+            message: 'Carpeta actualizada correctamente',
+          });
+        }
         this.orderFolders();
     });
     this.filesCreatedSubscription = this.fileService.filesCreated.subscribe((files) => {
       this.root.files.push(...files);
       this.orderFiles();
+      this.alertService.emitAlert({
+        type: 'success',
+        message: 'Archivos subidos correctamente',
+      });
     });
     this.fileDeletedSubscription = this.fileService.fileDeleted.subscribe((file) => {
       this.root.files = this.root.files.filter((f) => f._id !== file._id);
+      this.alertService.emitAlert({
+        type: 'success',
+        message: 'Archivo eliminado correctamente',
+      });
     });
     this.isLoading = false;
   }
