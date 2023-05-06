@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
 
   files: File[] = [];
   isLoading = false;
+  query = '';
 
   constructor(
     private fileService: FileService,
@@ -36,7 +37,10 @@ export class SearchComponent implements OnInit {
         this.isLoading = false;
       },
       error: () => this.router.navigate(['/']),
-      complete: () => this.isLoading = false,
+      complete: () => {
+        this.query = query;
+        this.isLoading = false;
+      },
     });
   }
 
