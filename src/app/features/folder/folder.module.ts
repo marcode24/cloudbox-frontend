@@ -2,9 +2,10 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { HeadersModule } from "@shared/headers/headers.module";
+import { LoadersModule } from "@shared/loaders/loaders.module";
 import { ModalsModule } from "@shared/modals/modals.module";
+import { TablesModule } from "@shared/tables/tables.module";
 
-import { ComponentsModule } from "./components/components.module";
 import { FolderComponent } from "./folder.component";
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FolderComponent } from "./folder.component";
     CommonModule,
     HeadersModule,
     ModalsModule,
-    ComponentsModule
+    LoadersModule,
+    TablesModule,
   ]
 })
 export class FolderModule {}

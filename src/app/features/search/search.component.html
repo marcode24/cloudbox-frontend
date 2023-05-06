@@ -1,0 +1,17 @@
+<div class="large-container">
+  <app-loader class="loader" *ngIf="isLoading"></app-loader>
+   <div class="not-items" *ngIf="!isLoading && files.length === 0">
+    <img src="assets/images/no-items.svg" alt="no-files-image">
+    <span class="description"> No se encontraron resultados con el término de búsqueda: <strong>{{ query }}</strong> </span>
+  </div>
+  <div class="files" *ngIf="files.length > 0 && !isLoading">
+    <section class="group">
+      <span class="title">Resultados de la búsqueda</span>
+      <div class="items">
+        <app-table-files *ngFor="let file of files"
+          [file]="file" [isSearch]="true"
+        ></app-table-files>
+      </div>
+    </section>
+  </div>
+</div>

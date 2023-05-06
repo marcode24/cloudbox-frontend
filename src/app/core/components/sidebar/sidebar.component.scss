@@ -27,12 +27,32 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
   width: 100%;
+  cursor: pointer;
 
   & .name {
     @include fs-1;
-    @include fw-600;
+    @include fw-700;
+    flex: 1;
+  }
+
+  & figure {
+    width: 4rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include width-medium {
+      display: none;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -44,7 +64,7 @@ nav {
 
   & .item {
     list-style: none;
-    height: 60px;
+    min-height: 60px;
 
     & a {
       color: var(--fc-primary);

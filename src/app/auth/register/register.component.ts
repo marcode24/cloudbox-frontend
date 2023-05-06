@@ -27,7 +27,7 @@ export class RegisterComponent {
         this.errors = [];
         if (err.status === 400 && err.error.msg === 'email has already been registered') {
           this.showErrors = true;
-          this.errors.push(`${data.email} ya ha sido registrado, por favor ingrese otro correo`);
+          this.errors.push(`'${data.email}' no esta disponible, por favor ingrese otro correo`);
         }
       }
     });

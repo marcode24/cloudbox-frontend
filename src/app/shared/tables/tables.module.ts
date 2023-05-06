@@ -22,4 +22,4 @@ import { TableFilesComponent } from './table-files/table-files.component';
     TableFilesComponent,
   ]
 })
-export class ComponentsModule { }
+export class TablesModule { }

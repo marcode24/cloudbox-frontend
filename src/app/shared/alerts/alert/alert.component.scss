@@ -1,0 +1,79 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'settings/_media.scss';
+
+.alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 1rem;
+  padding: 0.6rem 0.8rem;
+  box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  -webkit-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  -moz-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  pointer-events: none;
+  transform: translateY(100px);
+  transition: transform 0.5s ease-in;
+  max-width: 35rem;
+
+  @include width-small {
+    left: 20px;
+  }
+
+  &.success {
+    background-color: $green;
+
+    & .icon {
+      &:hover {
+        background-color: #36b158;
+      }
+    }
+  }
+
+  &.error {
+    background-color: $red;
+
+    & .icon {
+      &:hover {
+        background-color: #e74c3c;
+      }
+    }
+  }
+
+  &.show {
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in;
+  }
+
+  & .alert-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    @include fs-6;
+    @include fw-500;
+    color: var(--fc-white);
+
+    & .title {
+      width: 100%;
+    }
+
+    & .icon {
+      @include fs-3;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 5px;
+      transition: 0.3s ease-in;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@ import { ICONS } from '@constants/file.constant';
 })
 export class TableFilesComponent {
   @Input() file: File | Folder;
+  @Input() isSearch = false;
 
   constructor(
     private router: Router
@@ -34,4 +35,21 @@ export class TableFilesComponent {
       this.router.navigate(['/folder', this.file._id]);
     }
   }
+
+  buildPath(): string {
+    return this.file
+      .path?.reduce((acc, curr, index) =>
+        (index === 0) ? curr.name : `${acc} > ${curr.name}`, '') || '';
+  }
+
+  goToFolderFromPath(): void {
+    if (this.file.path && this.file.path.length > 1) {
+      const lastFolder = this.file.path[this.file.path.length - 1];
+      this.router.navigate(['/folder', lastFolder._id]);
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
+
 }
+

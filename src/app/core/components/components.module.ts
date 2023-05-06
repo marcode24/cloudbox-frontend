@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { PipesModule } from '@pipes/pipes.module';
 
 import { HeaderComponent } from './header/header.component';
+import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAuthComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   exports: [
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAuthComponent
   ]
 })
 export class ComponentsModule { }

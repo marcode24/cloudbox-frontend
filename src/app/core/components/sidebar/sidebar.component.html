@@ -1,5 +1,8 @@
 <nav class="sidebar closed">
-  <div class="logo">
+  <div class="logo" routerLink="/">
+    <figure>
+      <img src="assets/images/logo.svg" alt="logo_image">
+    </figure>
     <span class="name">Cloud Box</span>
     <div class="close">
       <i class="bx bx-x" (click)="changeVisibilitySidebar()"></i>
@@ -7,7 +10,7 @@
   </div>
   <ul class="items">
     <li class="item">
-      <a routerLink="/" routerLinkActive="active">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <i class='bx bx-customize'></i>
         <span class="name">Home</span>
       </a>
