@@ -29,6 +29,7 @@ nav {
   justify-content: space-between;
   gap: 0.8rem;
   width: 100%;
+  cursor: pointer;
 
   & .name {
     @include fs-1;

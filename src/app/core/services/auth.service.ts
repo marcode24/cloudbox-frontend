@@ -37,7 +37,11 @@ export class AuthService {
 
   createAccount(data: ICreateAccount): Observable<IUserCreated> {
     const url = `${base_url}/user`;
-    return this.http.post<IUserCreated>(url, data);
+    return this.http.post<IUserCreated>(url, data).pipe(map((resp) => {
+      this.userActive = resp.user;
+      Storage.savelocalStorage('token', resp.token);
+      return resp;
+    }));
   }
 
   login(data: ILogin): Observable<IUserCreated> {
