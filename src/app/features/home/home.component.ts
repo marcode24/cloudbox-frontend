@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private folderCreatedSubscription: Subscription;
   private filesCreatedSubscription: Subscription;
   private fileDeletedSubscription: Subscription;
+  isLoading = false;
 
   constructor(
     private authService: AuthService,
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.root = this.authService.userActive.rootFolder;
     this.folderService.breadcrumb = [
       { _id: this.root._id as string,
@@ -52,6 +54,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.fileDeletedSubscription = this.fileService.fileDeleted.subscribe((file) => {
       this.root.files = this.root.files.filter((f) => f._id !== file._id);
     });
+    this.isLoading = false;
   }
 
   private orderFolders(): void {

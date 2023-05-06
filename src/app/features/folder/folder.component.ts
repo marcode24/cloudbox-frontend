@@ -21,7 +21,7 @@ export class FolderComponent implements OnInit, OnDestroy {
   private fileDeletedSubscription: Subscription;
 
   folder: Folder;
-  loading = false;
+  isLoading = false;
   allFiles: (Folder | File)[];
 
   constructor(
@@ -57,10 +57,10 @@ export class FolderComponent implements OnInit, OnDestroy {
   }
 
   getFolder(): void {
-    this.loading = true;
+    this.isLoading = true;
     this.folder = this.folderService.folderTemp;
     this.mixFilesAndFolders();
-    this.loading = false;
+    this.isLoading = false;
   }
 
   private orderFolders(): void {
