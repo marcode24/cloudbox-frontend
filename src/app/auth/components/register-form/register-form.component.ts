@@ -17,23 +17,23 @@ export class RegisterFormComponent {
   private regexExpressions = RegexClass;
   @Output() registerData: EventEmitter<ICreateAccount> = new EventEmitter<ICreateAccount>();
   registerForm = this.fb.group({
-    name: ['marco', [
+    name: ['', [
       Validators.required,
       Validators.pattern(this.regexExpressions.ONLY_TEXT),
     ]],
-    surname: ['cruz', [
+    surname: ['', [
       Validators.required,
       Validators.pattern(this.regexExpressions.ONLY_TEXT),
     ]],
-    email: ['marco@gmail.com', [
+    email: ['', [
       Validators.required,
       Validators.pattern(this.regexExpressions.EMAIL),
     ]],
-    password: ['Mysecret123$', [
+    password: ['', [
       Validators.required,
       Validators.pattern(this.regexExpressions.PASSWORD),
     ]],
-    confirmPassword: ['Mysecret123$', [
+    confirmPassword: ['', [
       Validators.required,
     ]],
   }, {
