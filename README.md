@@ -1,27 +1,103 @@
-# Frontend
+# Cloud Box - A simple cloud storage service
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Requirements
 
-## Code scaffolding
+- [Git](https://git-scm.com/downloads)
+- [NodeJs](https://nodejs.org/en/)
+- [Npm](https://www.npmjs.com/)
+- [Angular CLI](https://angular.io/cli)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
+#### Clone the repository
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```shell
+git clone
+https://github.com/marcode24/cloudbox-frontend
+```
 
-## Running unit tests
+#### Check into the cloned repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```shell
+cd cloudbox-frontend
+```
 
-## Running end-to-end tests
+#### Install dependencies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```shell
+npm install
+```
 
-## Further help
+#### Start the server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```shell
+ng serve
+```
+
+#### Open the browser and navigate to
+
+```shell
+http://localhost:4200/
+```
+
+## Environments
+
+| Name       | URL                                      | PORT |
+| ---------- | ---------------------------------------- | ---- |
+| Localhost  | [localhost](http://localhost:4200)       | 4200 |
+| Production | [www.domain.com](https://www.domain.com) |
+
+## Folder Structure
+
+    .
+    ├── src
+    │ ├── app                 # Source code application
+    │ │ │── auth              # Module for auth feature
+    │ │ ├── core              # Module as Singleton
+    │ │ │ ├── components
+    │ │ │ ├── enums
+    │ │ │ ├── guards
+    │ │ │ ├── interceptors
+    │ │ │ ├── interfaces
+    │ │ │ ├── models
+    │ │ │ ├── services
+    │ │ │ └── utils
+    │ │ ├── features          # Module for features which compose the application
+    │ │ ├── shared            # Module for components shared between application modules
+    │ │ │ ├── components
+    │ ├── assets              # Styles, images, icons, fonts etc
+    │ ├── environments        # Config by environment (localhost and production)
+    │ └── styles              # Global styles
+    └── README.md
+
+## Previews - Desktop
+
+### Login
+
+![Login](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/login_ze2kbb.png)
+
+### Register
+
+![Register](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/register_xze8iw.png)
+
+### Home
+
+![Home](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/home_eshrq7.png)
+
+## Previews - Mobile
+
+### Login
+
+![Login](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/login_rcldxq.png)
+
+### Register
+
+![Register](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/register_tyrfwo.png)
+
+### Home
+
+![Home](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/home_dfui84.png)
