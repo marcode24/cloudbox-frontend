@@ -10,7 +10,7 @@ export class User {
   darkMode: boolean;
   createdAt: Date;
   updatedAt: Date;
-  rootFolder: Folder;
+  rootFolder: Folder | null;
   totalSpace: number;
   usedSpace: number;
   _id?: string;

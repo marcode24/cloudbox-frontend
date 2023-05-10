@@ -34,6 +34,7 @@
       "@constants/*": [ "app/core/constants/*" ],
       "@pipes/*": [ "app/core/pipes/*" ],
       "@shared/*": [ "app/shared/*" ],
+      "@mocks/*": [ "app/core/mocks/*" ]
     }
   },
   "angularCompilerOptions": {
