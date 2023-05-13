@@ -10,7 +10,7 @@ export class Folder {
   owner: User;
   createdAt: Date;
   updatedAt: Date;
-  parent: Folder;
+  parent: Folder | null;
   type: string;
   folders: Folder[];
   files: File[];

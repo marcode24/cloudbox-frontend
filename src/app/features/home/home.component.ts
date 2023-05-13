@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.root = this.authService.userActive.rootFolder;
+    this.root = this.authService.userActive.rootFolder as Folder;
     this.folderService.breadcrumb = [
       { _id: this.root._id as string,
         name: this.root.name,
