@@ -1,57 +1,68 @@
-# Cloud Box - A simple cloud storage service
+<div align="center">
+  <h1>☁️ Cloud Box</h1>
+  <a href="https://cloudbox-m.netlify.app" target="_blank">View Demo</a>
+  <br/><br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6
+  ![Version](https://img.shields.io/github/package-json/v/marcode24/cloudbox-frontend?style=popout&logo=npm)
+  ![GitHub CI Workflow Status](https://img.shields.io/github/actions/workflow/status/marcode24/cloudbox-frontend/ci.yml?branch=main&style=popout&logo=testcafe&label=tests)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/marcode24/cloudbox-frontend?style=popout&logo=github&label=repo%20size)
+  ![GitHub](https://img.shields.io/github/license/marcode24/cloudbox-frontend?style=popout&logo=github&label=license)
+  ![GitHub Repo stars](https://img.shields.io/github/stars/marcode24/cloudbox-frontend?style=popout&logo=apachespark&color=yellow&logoColor=yellow)
+  ![Github repo views](https://img.shields.io/github/search/marcode24/cloudbox-frontend/cloudbox-frontend?style=popout&logo=github&label=repo%20views)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/marcode24/cloudbox-frontend?style=popout&logo=git&label=last%20commit)
+</div>
 
-## Getting Started
+## 🚀 Getting Started
 
-### Requirements
+This is a cloud storage application that allows you to upload, download and delete files. Here you can also create folders and subfolders to organize your files.
 
-- [Git](https://git-scm.com/downloads)
-- [NodeJs](https://nodejs.org/en/)
-- [Npm](https://www.npmjs.com/)
-- [Angular CLI](https://angular.io/cli)
+###  📝 Requirements
 
-### Installation
+- [![Angular](https://img.shields.io/badge/Angular-blue?style=popout&logo=angular&logoColor=red)](https://angular.io/)
+- [![Node](https://img.shields.io/badge/Node-gray?style=popout&logo=node.js)](https://nodejs.org/en/)
+- [![NPM](https://img.shields.io/badge/NPM-blue?style=popout&logo=npm)](https://www.npmjs.com/)
+- [![Git](https://img.shields.io/badge/Git-gray?style=popout&logo=git)](https://git-scm.com/)
 
-#### Clone the repository
+Optional tools:
 
-```shell
-git clone
-https://github.com/marcode24/cloudbox-frontend
-```
+- [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?style=popout&logo=visual-studio-code)](https://code.visualstudio.com/)
 
-#### Check into the cloned repository
+### 📦 Installation & Usage
 
-```shell
+```bash
+# Clone this repository
+git clone https://github.com/marcode24/cloudbox-frontend
+
+# Go into the repository
 cd cloudbox-frontend
-```
 
-#### Install dependencies
-
-```shell
+# Install dependencies
 npm install
-```
 
-#### Start the server
-
-```shell
+# Run the app
 ng serve
 ```
 
-#### Open the browser and navigate to
+shut it down manually with `Ctrl-C` or `Cmd-C`.
 
-```shell
-http://localhost:4200/
+## 📐 Tests
+
+```bash
+# Run tests
+npm run test
+
+# Run tests with coverage
+npm run test:cov
 ```
 
-## Environments
+## 🌎 Environments
 
-| Name       | URL                                      | PORT |
-| ---------- | ---------------------------------------- | ---- |
-| Localhost  | [localhost](http://localhost:4200)       | 4200 |
-| Production | [www.domain.com](https://www.domain.com) |
+| Name       | URL                                                              | PORT |
+| ---------- | ---------------------------------------------------------------- | ---- |
+| Localhost  | [localhost](http://localhost:4200)                               | 4200 |
+| Production | [https://cloudbox-m.netlify.app](https://cloudbox-m.netlify.app) |
 
-## Folder Structure
+## 📁 Folder Structure
 
     .
     ├── src
@@ -74,7 +85,7 @@ http://localhost:4200/
     │ └── styles              # Global styles
     └── README.md
 
-## Previews - Desktop
+## 🖼️ Previews - Desktop
 
 ### Login
 
@@ -88,7 +99,7 @@ http://localhost:4200/
 
 ![Home](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/home_eshrq7.png)
 
-## Previews - Mobile
+## 🖼️ Previews - Mobile
 
 ### Login
 
