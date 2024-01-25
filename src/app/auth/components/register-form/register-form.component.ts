@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { ICreateAccount } from '@interfaces/user.interface';
 
@@ -40,7 +40,7 @@ export class RegisterFormComponent {
     validators: CustomValidations.match('password', 'confirmPassword'),
   });
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
   ) { }
 
   validateForm(field: string): boolean | undefined | null {
