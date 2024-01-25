@@ -1,4 +1,13 @@
 <div align="center">
+
+  <img
+    alt="Cloud Box"
+    src="https://res.cloudinary.com/dfeujtobk/image/upload/v1705527264/Portfolio/726shots_so_bjwehm.png"
+    width="1200"
+    style="border-radius: 1rem" />
+
+  <br />
+
   <h1>☁️ Cloud Box</h1>
   <a href="https://cloudbox-m.netlify.app" target="_blank">View Demo</a>
   <br/><br/>
@@ -16,7 +25,7 @@
 
 This is a cloud storage application that allows you to upload, download and delete files. Here you can also create folders and subfolders to organize your files.
 
-###  📝 Requirements
+### 📝 Requirements
 
 - [![Angular](https://img.shields.io/badge/Angular-blue?style=popout&logo=angular&logoColor=red)](https://angular.io/)
 - [![Node](https://img.shields.io/badge/Node-gray?style=popout&logo=node.js)](https://nodejs.org/en/)
@@ -85,30 +94,6 @@ npm run test:cov
     │ └── styles              # Global styles
     └── README.md
 
-## 🖼️ Previews - Desktop
+## 📝 License
 
-### Login
-
-![Login](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/login_ze2kbb.png)
-
-### Register
-
-![Register](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/register_xze8iw.png)
-
-### Home
-
-![Home](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/desktop/home_eshrq7.png)
-
-## 🖼️ Previews - Mobile
-
-### Login
-
-![Login](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/login_rcldxq.png)
-
-### Register
-
-![Register](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/register_tyrfwo.png)
-
-### Home
-
-![Home](https://res.cloudinary.com/dfeujtobk/image/upload/v1683409111/cloudbox/mobile/home_dfui84.png)
+This project is [MIT](./LICENSE) licensed. See the LICENSE for more information. 😉
