@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { ILogin } from '@interfaces/user.interface';
 
@@ -28,7 +28,7 @@ export class LoginFormComponent {
   });
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
   ) { }
 
   validateForm(field: string): boolean | undefined | null {
